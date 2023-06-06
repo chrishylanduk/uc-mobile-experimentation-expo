@@ -2,7 +2,7 @@ import { Pressable, Text, View } from "react-native";
 import styled from "styled-components/native";
 
 export const GovukHeader = styled(View)`
-position: relative;
+  position: relative;
   margin-bottom: -10px;
   padding-top: 10px;
   border-bottom: 10px solid #1d70b8;
