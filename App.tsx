@@ -8,7 +8,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import SettingsPage from "./app/views/settings";
 import TodoPage from "./app/views/todos";
 import JournalPage from "./app/views/jounals";
-import {useEffect} from "react";
+import {createContext, useEffect} from "react";
 import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
 import { Subscription } from 'expo-modules-core';
@@ -120,6 +120,8 @@ function SignedInSection() {
   );
 }
 
+export const PushNotificationTokenContext = React.createContext<String>("default");
+
 function App() {
     const [expoPushToken, setExpoPushToken] = React.useState<String>("");
     const [notification, setNotification] = React.useState<Notifications.Notification | boolean>(false);
@@ -158,7 +160,7 @@ function App() {
             }
         };
     }, []);
-  return (
+  return (<PushNotificationTokenContext.Provider value={expoPushToken}>
     <NavigationContainer>
       <TopLevel.Navigator
         screenOptions={{
@@ -169,7 +171,8 @@ function App() {
         <TopLevel.Screen name="SignIn" component={SignedInSection} />
       </TopLevel.Navigator>
     </NavigationContainer>
-  );
+    </PushNotificationTokenContext.Provider>
+    );
 }
 
 export default App;
