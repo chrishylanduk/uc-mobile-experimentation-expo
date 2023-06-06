@@ -15,7 +15,7 @@ export const GovukButton = styled(Pressable)`
   border-style: solid;
   border-radius: 0;
   background-color: #00703c;
-  box-shadow: 0 -2 0 0 #002d18;
+  //box-shadow: 0 -2 0 0 #002d18;
   vertical-align: top;
 `;
 

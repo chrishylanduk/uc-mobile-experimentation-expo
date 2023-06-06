@@ -1,7 +1,7 @@
 import {Text, View} from "react-native";
 import styled from "styled-components/native";
 
-export const GovukPanel = styled(View)`
+export const GovukText = styled(Text)`
 max-width: 38em;
 margin-bottom: 20px;
 font-size: 19px;

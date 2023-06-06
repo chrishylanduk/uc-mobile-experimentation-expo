@@ -8,27 +8,28 @@ import {GovukInset} from "../../components/inset/styles";
 import {GovukHeader} from "../../components/header/styles";
 import {Page} from "../../components/page/styles";
 import {GovukH3} from "../../components/h3/styles";
-import {GovukWarningtext} from "../../components/warning/styles";
+import {GovukWarningBorder, GovukWarningText} from "../../components/warning/styles";
+import {GovukText} from "../../components/text/styles";
 import {GovukPanel} from "../../components/panel/styles";
 
 const JournalPage = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Page>
-                <Text>otherpage</Text>
+                <GovukText>otherpage</GovukText>
                 <GovukH1>GovukH1</GovukH1>
                 <GovukH2>GovukH2</GovukH2>
                 <GovukH3>GovukH3</GovukH3>
-                <View>
-                    <GovukWarningtext>warning text</GovukWarningtext>
-                </View>
+                <GovukWarningBorder>
+                    <GovukWarningText>warning text</GovukWarningText>
+                </GovukWarningBorder>
                 <GovukHeader>
-                    <Text>Header</Text>
+                    <GovukText>Header</GovukText>
                 </GovukHeader>
                 <GovukInset>
-                    <Text>
+                    <GovukText>
                         Inset
-                    </Text>
+                    </GovukText>
                 </GovukInset>
                 <GovukPanel><Text>Panel</Text></GovukPanel>
 

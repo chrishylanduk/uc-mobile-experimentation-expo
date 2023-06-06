@@ -1,10 +1,10 @@
 import * as LocalAuthentication from 'expo-local-authentication';
 import * as React from 'react';
-import { GovukButton, GovukButtonText } from './styles';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../../App';
+import {GovukButton, GovukButtonText} from "../../button/styles";
 
 
 enum EResult {
