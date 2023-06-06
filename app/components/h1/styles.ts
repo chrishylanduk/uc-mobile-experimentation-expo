@@ -1,7 +1,7 @@
 import { Pressable, Text } from "react-native";
 import styled from "styled-components/native";
 
-export const GovukH1 = styled(Pressable)`
+export const GovukH1 = styled(Text)`
   boxSizing: border-box;
   position: relative;
   width: 100%;
@@ -20,7 +20,6 @@ export const GovukH1 = styled(Pressable)`
   borderTopRightRadius: 0;
   borderBottomRightRadius: 0;
   borderBottomLeftRadius: 0;
-  backgroundColor: #00703c;
   shadowOffset: {
     width: 0;
     height: 2;

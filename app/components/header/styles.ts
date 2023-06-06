@@ -1,9 +1,8 @@
-import { Pressable, Text } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import styled from "styled-components/native";
 
-export const GovukHeader = styled(Pressable)`
+export const GovukHeader = styled(View)`
   border-bottom: 10px solid #1d70b8;
-  @media (min-width: 40.0625em)
   font-size: 1rem;
   line-height: 1.25;
   -webkit-font-smoothing: antialiased;

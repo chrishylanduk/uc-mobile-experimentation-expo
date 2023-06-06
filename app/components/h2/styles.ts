@@ -1,7 +1,7 @@
 import { Pressable, Text } from "react-native";
 import styled from "styled-components/native";
 
-export const GovukH2 = styled(Pressable)`
+export const GovukH2 = styled(Text)`
 margin-bottom: 20px;
   font-size: 1.5rem;
   line-height: 1.25;
@@ -14,7 +14,6 @@ margin-bottom: 20px;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
-  background-color: #f3f2f1;
   color: #fff;
   textAlign: center;
   fontWeight: 400;
