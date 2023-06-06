@@ -16,13 +16,11 @@ const ClaimantHomePage = () => {
             <Page>
                 <GovukH1>Welcome John!</GovukH1>
                 <GovukText>32 years old, partner of Jane Doe</GovukText>
-                //Link?
 
                 <GovukH2>Payments</GovukH2>
                 <GovukInset>
                     <GovukText>Your next payment will be</GovukText>
-                    <GovukH2>£1,432</GovukH2> //Shouldn't be H2
-                    // hint text
+                    <GovukH2>£1,432</GovukH2>
                 </GovukInset>
 
                 <GovukButton>
