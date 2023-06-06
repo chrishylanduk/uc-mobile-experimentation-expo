@@ -5,14 +5,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import LoginPage from "./app/views/login";
 import ClaimantHomePage from "./app/views/claimant_home";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import OtherPage from "./app/views/jounals";
+import SettingsPage from "./app/views/settings";
 import TodoPage from "./app/views/todos";
 import JournalPage from "./app/views/jounals";
 import {useEffect} from "react";
 import * as Notifications from "expo-notifications";
-import * as LocalAuthentication from "expo-local-authentication";
 import * as Device from "expo-device";
-import { EventEmitter, Subscription, UnavailabilityError } from 'expo-modules-core';
+import { Subscription } from 'expo-modules-core';
 import {
     Platform,
 } from "react-native";
@@ -62,12 +61,20 @@ export type RootStackParamList = {
   SignIn: undefined;
 };
 
-const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator<RootStackParamList>();
+export type SignedInParamList = {
+    Home: undefined;
+    Todo: undefined;
+    Journals: undefined;
+    Settings: undefined;
+    Appointments: undefined;
+};
 
-function SignedInStack() {
+const SignedInStack = createBottomTabNavigator<SignedInParamList>();
+const TopLevel = createNativeStackNavigator<RootStackParamList>();
+
+function SignedInSection() {
   return (
-    <Tab.Navigator
+    <SignedInStack.Navigator
       initialRouteName="Home"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -87,7 +94,7 @@ function SignedInStack() {
               break;
             }
             default: {
-              iconName = "ellipsis-h";
+              iconName = "cog";
               break;
             }
           }
@@ -105,11 +112,11 @@ function SignedInStack() {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Home" component={ClaimantHomePage} />
-      <Tab.Screen name="Todo" component={TodoPage} />
-      <Tab.Screen name="Journals" component={JournalPage} />
-      <Tab.Screen name="More" component={OtherPage} />
-    </Tab.Navigator>
+      <SignedInStack.Screen name="Home" component={ClaimantHomePage} />
+      <SignedInStack.Screen name="Todo" component={TodoPage} />
+      <SignedInStack.Screen name="Journals" component={JournalPage} />
+      <SignedInStack.Screen name="Settings" component={SettingsPage} />
+    </SignedInStack.Navigator>
   );
 }
 
@@ -153,14 +160,14 @@ function App() {
     }, []);
   return (
     <NavigationContainer>
-      <Stack.Navigator
+      <TopLevel.Navigator
         screenOptions={{
           headerShown: false,
         }}
       >
-        <Stack.Screen name="SignedOut" component={LoginPage} />
-        <Stack.Screen name="SignIn" component={SignedInStack} />
-      </Stack.Navigator>
+        <TopLevel.Screen name="SignedOut" component={LoginPage} />
+        <TopLevel.Screen name="SignIn" component={SignedInSection} />
+      </TopLevel.Navigator>
     </NavigationContainer>
   );
 }

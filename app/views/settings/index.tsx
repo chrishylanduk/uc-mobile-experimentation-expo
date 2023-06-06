@@ -2,9 +2,8 @@ import {
     Text,
   View,
 } from "react-native";
-import SigninButton from "../../components/govuk/signin_button";
 
-const OtherPage = () => {
+const SettingsPage = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>otherpage</Text>
@@ -12,4 +11,4 @@ const OtherPage = () => {
     )
 } 
 
-export default OtherPage
+export default SettingsPage
