@@ -4,8 +4,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginPage from "./app/views/login";
 import ClaimantHomePage from "./app/views/claimant_home";
-import { Ionicons } from '@expo/vector-icons';
-import OtherPage from "./app/views/other_page";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import OtherPage from "./app/views/jounals";
+import TodoPage from './app/views/todos';
+import JournalPage from './app/views/jounals';
 
 export type RootStackParamList = {
   SignedOut: undefined;
@@ -21,17 +23,28 @@ function SignedInStack() {
   <Tab.Navigator initialRouteName="Home" 
   screenOptions={({ route }) => ({
     tabBarIcon: ({ focused, color, size }) => {
-      let iconName : keyof typeof Ionicons.glyphMap;
+      let iconName: keyof typeof FontAwesome.glyphMap;
 
-      if (route.name === 'Home') {
-        iconName = focused
-          ? 'ios-information-circle'
-          : 'ios-information-circle-outline';
-      } else {
-        iconName = focused ? 'ios-list' : 'ios-list-outline';
+      switch (route.name) {
+        case "Home": {
+          iconName = "home"
+          break;
+        }
+        case "Todo": {
+          iconName = "clipboard"
+          break;
+        }
+        case "Journals": {
+          iconName = "book"
+          break;
+        }
+        default: {
+          iconName = "ellipsis-h"
+          break;
+        }
       }
+      return <FontAwesome name={iconName} size={size} color={color} />;
 
-      return <Ionicons name={iconName} size={size} color={color} />;
    },
     headerStyle: {
       backgroundColor: '#f4511e',
@@ -44,8 +57,10 @@ function SignedInStack() {
     tabBarActiveTintColor: 'tomato',
       tabBarInactiveTintColor: 'gray',
   })}>
-    <Tab.Screen name="Other" component={OtherPage} />
     <Tab.Screen name="Home" component={ClaimantHomePage} />
+    <Tab.Screen name="Todo" component={TodoPage} />
+    <Tab.Screen name="Journals" component={JournalPage} />
+    <Tab.Screen name="More" component={OtherPage} />
   </Tab.Navigator>
   )
 }

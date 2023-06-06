@@ -15,8 +15,7 @@ enum EResult {
 }
 type homeScreenProp = NativeStackNavigationProp<RootStackParamList, 'SignedOut'>;
 
-
-const SigninButton = () => {
+const SigninButton: React.FC = () => {
     const navigation = useNavigation<homeScreenProp>();
 
 
@@ -26,6 +25,10 @@ const SigninButton = () => {
   const [irisAvailable, setIrisAvailable] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [result, setResult] = React.useState<EResult>();
+
+  const login = () => {  
+    navigation.navigate('SignIn')
+  };
 
   const checkSupportedAuthentication = async () => {
     const types = await LocalAuthentication.supportedAuthenticationTypesAsync();
@@ -108,22 +111,28 @@ const SigninButton = () => {
     description = 'No biometric authentication methods available';
   }
 
+        
+  
+
 
 
     return(
         <View>
-        <Text>
-            {description}
-        </Text>
-        {facialRecognitionAvailable || fingerprintAvailable || irisAvailable ? (
-            <GovukButton>
+          <GovukButton>
                 <GovukButtonText
-                    onPress={authenticate}
+                    onPress={ () => {
+                      if ((facialRecognitionAvailable || fingerprintAvailable || irisAvailable) && result == null) {
+                        authenticate();
+                      } else {
+                        login();
+                      }
+                      
+                    }
+                    }
                     >
                     Sign in
                 </GovukButtonText>
             </GovukButton>
-          ) : null}
         </View>
         
     );

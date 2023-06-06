@@ -1,17 +1,15 @@
 import {
+    Text,
   View,
 } from "react-native";
 import SigninButton from "../../components/govuk/signin_button";
 
-
-
-const LoginPage = () => {
+const JournalPage = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <SigninButton
-            />
+            <Text>otherpage</Text>
         </View>
     )
 } 
 
-export default LoginPage
+export default JournalPage

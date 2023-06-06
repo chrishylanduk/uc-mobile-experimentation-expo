@@ -1,17 +1,15 @@
 import {
+    Text,
   View,
 } from "react-native";
 import SigninButton from "../../components/govuk/signin_button";
 
-
-
-const LoginPage = () => {
+const TodoPage = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <SigninButton
-            />
+            <Text>todo page</Text>
         </View>
     )
 } 
 
-export default LoginPage
+export default TodoPage
