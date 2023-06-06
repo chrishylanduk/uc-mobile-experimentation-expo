@@ -21,10 +21,6 @@ export const GovukButton = styled(Pressable)`
   borderBottomRightRadius: 0;
   borderBottomLeftRadius: 0;
   backgroundColor: #00703c;
-  shadowOffset: {
-    width: 0;
-    height: 2;
-  };
   shadowRadius: 0;
   shadowColor: #002d18;
   shadowOpacity: 1;
@@ -33,7 +29,7 @@ export const GovukButton = styled(Pressable)`
 
 export const GovukButtonText = styled(Text)`
   color: #fff;
-  textAlign: center;
-  fontWeight: 400;
-  fontSize: 30px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
 `
