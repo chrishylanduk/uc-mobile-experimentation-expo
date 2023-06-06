@@ -1,6 +1,6 @@
 import {
     Text,
-  View,
+  View, StyleSheet
 } from "react-native";
 import SigninButton from "../../components/govuk/signin_button";
 import {Page} from "../../components/page/styles";
@@ -9,11 +9,18 @@ import {GovukText} from "../../components/text/styles";
 import {GovukH2} from "../../components/h2/styles";
 import {GovukInset} from "../../components/inset/styles";
 import {GovukButton, GovukButtonText} from "../../components/button/styles";
+import {Image} from 'expo-image';
 
 const ClaimantHomePage = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Page>
+                <Image
+                    source={{
+                        uri: 'https://picsum.photos/seed/696/3000/2000'
+                    }}
+                    style={{ width: '100%', height: '100%'}}
+                />
                 <GovukH1>Welcome John!</GovukH1>
                 <GovukText>32 years old, partner of Jane Doe</GovukText>
 
@@ -31,6 +38,5 @@ const ClaimantHomePage = () => {
             </Page>
         </View>
     )
-} 
-
+}
 export default ClaimantHomePage
