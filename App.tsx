@@ -8,7 +8,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import SettingsPage from "./app/views/settings";
 import TodoPage from "./app/views/todos";
 import JournalPage from "./app/views/jounals";
-import {createContext, useEffect} from "react";
+import {Dispatch, SetStateAction, useEffect} from "react";
 import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
 import { Subscription } from 'expo-modules-core';
@@ -73,6 +73,11 @@ export type SignedInParamList = {
     Appointments: undefined;
 };
 
+export type UserIdContextType = {
+    userId: String,
+    setUserId: Dispatch<SetStateAction<String>>
+}
+
 const SignedInStack = createBottomTabNavigator<SignedInParamList>();
 const TopLevel = createNativeStackNavigator<RootStackParamList>();
 
@@ -124,11 +129,19 @@ function SignedInSection() {
   );
 }
 
+
 export const PushNotificationTokenContext = React.createContext<String>("default");
+export const UserIdContext = React.createContext<UserIdContextType>({
+    userId: "",
+    setUserId: () => {}
+});
 
 function App() {
     const [expoPushToken, setExpoPushToken] = React.useState<String>("");
     const [notification, setNotification] = React.useState<Notifications.Notification | boolean>(false);
+    const [userId, setUserId] = React.useState<String>("");
+    const userIdValue = {userId, setUserId};
+
     const notificationListener = React.useRef<Subscription>();
     const responseListener = React.useRef<Subscription>();
 
@@ -165,18 +178,25 @@ function App() {
             }
         };
     }, []);
-  return (<PushNotificationTokenContext.Provider value={expoPushToken}>
+  return (
+      <UserIdContext.Provider value={userIdValue}>
+      <PushNotificationTokenContext.Provider value={expoPushToken}>
     <NavigationContainer>
       <TopLevel.Navigator
         screenOptions={{
           headerShown: false,
         }}
       >
-        <TopLevel.Screen name="SignedOut" component={LoginPage} />
-        <TopLevel.Screen name="SignIn" component={SignedInSection} />
+          {
+              userId === "" ?
+                  <TopLevel.Screen name="SignedOut" component={LoginPage} />
+                  :
+                  <TopLevel.Screen name="SignIn" component={SignedInSection} />
+          }
       </TopLevel.Navigator>
     </NavigationContainer>
     </PushNotificationTokenContext.Provider>
+      </UserIdContext.Provider>
     );
 }
 
