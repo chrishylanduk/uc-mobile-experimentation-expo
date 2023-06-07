@@ -76,13 +76,13 @@ export type SignedOutParamList = {
 
 export type SignedInParamList = {
     Home: undefined;
-    TodoSection: NavigatorScreenParams<TodoParamList>;
+    Todo: NavigatorScreenParams<TodoParamList>;
     Journals: undefined;
     Settings: undefined;
 };
 
 export type TodoParamList = {
-    Todo: undefined;
+    'Todo Page': undefined;
     Appointments: undefined;
 }
 
@@ -103,7 +103,7 @@ function TodoSection() {
                 headerShown: false,
             }}
         >
-            <TodoStack.Screen name="Todo" component={TodoPage} />
+            <TodoStack.Screen name="Todo Page" component={TodoPage} />
             <TodoStack.Screen name="Appointments" component={AppointmentPage} />
         </TodoStack.Navigator>
     );
@@ -132,7 +132,7 @@ function SignedInSection() {
               iconName = "home";
               break;
             }
-            case "TodoSection": {
+            case "Todo": {
               iconName = "clipboard";
               break;
             }
@@ -161,7 +161,7 @@ function SignedInSection() {
       })}
     >
       <SignedInStack.Screen name="Home" component={ClaimantHomePage} />
-      <SignedInStack.Screen name="TodoSection" component={TodoSection} />
+      <SignedInStack.Screen name="Todo" component={TodoSection} />
       <SignedInStack.Screen name="Journals" component={JournalPage} />
       <SignedInStack.Screen name="Settings" component={SettingsPage} />
     </SignedInStack.Navigator>
