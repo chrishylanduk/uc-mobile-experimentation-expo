@@ -47,7 +47,7 @@ const SigninButton: React.FC = () => {
     setLoading(true);
 
     try {
-      const results = await LocalAuthentication.authenticateAsync();
+      const results = await LocalAuthentication.authenticateAsync({promptMessage: description});
 
       if (results.success) {
         // route.params.setUsertoken = 'token'
@@ -92,21 +92,21 @@ const SigninButton: React.FC = () => {
       break;
   }
 
-  let description;
+  let description : string;
   if (facialRecognitionAvailable && fingerprintAvailable && irisAvailable) {
-    description = 'Authenticate with Face ID, touch ID or iris ID';
+    description = 'Log in with face, fingerprint or iris';
   } else if (facialRecognitionAvailable && fingerprintAvailable) {
-    description = 'Authenticate with Face ID or touch ID';
+    description = 'Log in with face or fingerprint';
   } else if (facialRecognitionAvailable && irisAvailable) {
-    description = 'Authenticate with Face ID or iris ID';
+    description = 'Log in with face or iris';
   } else if (fingerprintAvailable && irisAvailable) {
-    description = 'Authenticate with touch ID or iris ID';
+    description = 'Log in with fingerprint or iris';
   } else if (facialRecognitionAvailable) {
-    description = 'Authenticate with Face ID';
+    description = 'Log in with face';
   } else if (fingerprintAvailable) {
-    description = 'Authenticate with touch ID ';
+    description = 'Log in with fingerprint ';
   } else if (irisAvailable) {
-    description = 'Authenticate with iris ID';
+    description = 'Log in with iris';
   } else {
     description = 'No biometric authentication methods available';
   }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "666968912043",
+    "project_id": "uc-mobile-experimentation-expo",
+    "storage_bucket": "uc-mobile-experimentation-expo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666968912043:android:ec5ec528b5dc07251b47ee",
+        "android_client_info": {
+          "package_name": "com.pebblewash.ucmobileexperimentationexpo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666968912043-fv24kppi7rph2r03tmgetp74jbvs8k4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYBtUGMLQsaiJm-d5dJfakkVuTvfJPed4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666968912043-fv24kppi7rph2r03tmgetp74jbvs8k4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

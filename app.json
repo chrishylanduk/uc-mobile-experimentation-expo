@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "uc-mobile-experimentation-expo",
+    "name": "Universal Credit",
     "slug": "uc-mobile-experimentation-expo",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -10,17 +10,18 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pebblewash.ucmobileexperimentationexpo"
     },
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon.png"
     },
     "extra": {
       "eas": {
@@ -28,7 +29,21 @@
       }
     },
     "android": {
-      "package": "com.pebblewash.ucmobileexperimentationexpo"
+      "package": "com.pebblewash.ucmobileexperimentationexpo",
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notificationIcon.png",
+          "color": "#ffffff"
+        }
+      ]
+    ],
+    "notification": {
+      "icon": "./assets/notificationIcon.png",
+      "color": "#fff"
     }
   }
 }

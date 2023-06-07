@@ -38,7 +38,11 @@ async function registerForPushNotificationsAsync() {
             alert("Failed to get push token for push notification!");
             return;
         }
-        token = (await Notifications.getExpoPushTokenAsync()).data;
+        try {
+            token = (await Notifications.getExpoPushTokenAsync()).data;
+        } catch (error) {
+            alert(error)
+        }
         console.log(token);
     } else {
         alert("Must use physical device for Push Notifications");
@@ -147,6 +151,7 @@ function App() {
         responseListener.current  =
             Notifications.addNotificationResponseReceivedListener((response) => {
                 console.log(response);
+                //Todo: (This triggers when notification clicked) - go to appointment screen
             });
 
         return () => {
