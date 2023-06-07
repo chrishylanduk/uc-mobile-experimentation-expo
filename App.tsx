@@ -175,7 +175,7 @@ function SignedOutSection() {
             }}
         >
             {
-                    (facialRecognitionAvailable || fingerprintAvailable || irisAvailable || checkedBio) ?
+                    (facialRecognitionAvailable || fingerprintAvailable || irisAvailable || !checkedBio) ?
                     <SignedOutStack.Screen name="Splash" component={SplashPage} />//Todo pass in result to use in if above
 
                     :
