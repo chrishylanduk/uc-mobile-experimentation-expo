@@ -21,7 +21,7 @@ const SettingsPage = () => {
                     contentFit="contain"
                 />
                 <Pressable style={{height: 800}}></Pressable>
-                <Text>{token}</Text>
+                <Text selectable={true}>{token}</Text>
             </View>
         </ScrollView>
     )
