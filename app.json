@@ -36,13 +36,13 @@
       [
         "expo-notifications",
         {
-          "icon": "./assets/notificationIcon.png",
+          "icon": "./assets/images/notificationIcon.png",
           "color": "#ffffff"
         }
       ]
     ],
     "notification": {
-      "icon": "./assets/notificationIcon.png",
+      "icon": "./assets/images/notificationIcon.png",
       "color": "#fff"
     }
   }
