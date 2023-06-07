@@ -240,7 +240,7 @@ function App() {
             Notifications.addNotificationResponseReceivedListener((response) => {
                 console.log(response);
                 navigate('SignIn', {
-                        screen: 'TodoSection', params: {
+                        screen: 'Todo', params: {
                             screen: 'Appointments'
                         }
                     })
