@@ -15,6 +15,7 @@ import { Subscription } from 'expo-modules-core';
 import {
     Platform,
 } from "react-native";
+import {Image} from 'expo-image';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -81,6 +82,15 @@ export type UserIdContextType = {
 const SignedInStack = createBottomTabNavigator<SignedInParamList>();
 const TopLevel = createNativeStackNavigator<RootStackParamList>();
 
+function LogoTitle()  {
+    return (
+        <Image
+            style={{ width: 120, height: 45 }}
+            source={require('./assets/images/fullLogo.png')}
+        />
+    );
+}
+
 function SignedInSection() {
   return (
     <SignedInStack.Navigator
@@ -110,15 +120,13 @@ function SignedInSection() {
           return <FontAwesome name={iconName} size={size} color={color} />;
         },
         headerStyle: {
-          backgroundColor: "#f4511e",
+          backgroundColor: "#ffffff"
         },
+          headerTitleStyle: {alignSelf: "center"},
         headerTintColor: "#fff",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-
-        tabBarActiveTintColor: "tomato",
+        tabBarActiveTintColor: "#1d70b8",
         tabBarInactiveTintColor: "gray",
+          headerTitle: (props) => <LogoTitle {...props} />
       })}
     >
       <SignedInStack.Screen name="Home" component={ClaimantHomePage} />
