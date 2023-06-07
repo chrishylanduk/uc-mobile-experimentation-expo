@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Dispatch, SetStateAction, useEffect} from "react";
-import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {NavigationContainer, NavigatorScreenParams} from "@react-navigation/native";
+import {createNativeStackNavigator, NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import LoginPage from "./app/views/login";
 import ClaimantHomePage from "./app/views/claimant_home";
@@ -16,6 +16,9 @@ import {Subscription} from 'expo-modules-core';
 import {Platform,} from "react-native";
 import SplashPage from "./app/views/splash";
 import * as LocalAuthentication from "expo-local-authentication";
+import AppointmentPage from "./app/views/appointment";
+import { useNavigation } from '@react-navigation/native';
+import {navigate, navigationRef} from "./app/RootNavigation";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -62,8 +65,8 @@ async function registerForPushNotificationsAsync() {
 }
 
 export type RootStackParamList = {
-  SignedOut: undefined;
-  SignIn: undefined;
+  SignedOut: SignedOutParamList;
+  SignIn: NavigatorScreenParams<SignedInParamList>;
 };
 
 export type SignedOutParamList = {
@@ -73,11 +76,15 @@ export type SignedOutParamList = {
 
 export type SignedInParamList = {
     Home: undefined;
-    Todo: undefined;
+    TodoSection: NavigatorScreenParams<TodoParamList>;
     Journals: undefined;
     Settings: undefined;
-    Appointments: undefined;
 };
+
+export type TodoParamList = {
+    Todo: undefined;
+    Appointments: undefined;
+}
 
 export type UserIdContextType = {
     userId: String,
@@ -87,6 +94,20 @@ export type UserIdContextType = {
 const SignedInStack = createBottomTabNavigator<SignedInParamList>();
 const TopLevel = createNativeStackNavigator<RootStackParamList>();
 const SignedOutStack = createNativeStackNavigator<SignedOutParamList>();
+const TodoStack = createNativeStackNavigator<TodoParamList>();
+
+function TodoSection() {
+    return (
+        <TodoStack.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
+            <TodoStack.Screen name="Todo" component={TodoPage} />
+            <TodoStack.Screen name="Appointments" component={AppointmentPage} />
+        </TodoStack.Navigator>
+    );
+}
 
 function LogoTitle()  {
     return (
@@ -111,7 +132,7 @@ function SignedInSection() {
               iconName = "home";
               break;
             }
-            case "Todo": {
+            case "TodoSection": {
               iconName = "clipboard";
               break;
             }
@@ -140,7 +161,7 @@ function SignedInSection() {
       })}
     >
       <SignedInStack.Screen name="Home" component={ClaimantHomePage} />
-      <SignedInStack.Screen name="Todo" component={TodoPage} />
+      <SignedInStack.Screen name="TodoSection" component={TodoSection} />
       <SignedInStack.Screen name="Journals" component={JournalPage} />
       <SignedInStack.Screen name="Settings" component={SettingsPage} />
     </SignedInStack.Navigator>
@@ -177,7 +198,6 @@ function SignedOutSection() {
             {
                     (facialRecognitionAvailable || fingerprintAvailable || irisAvailable || !checkedBio) ?
                     <SignedOutStack.Screen name="Splash" component={SplashPage} />//Todo pass in result to use in if above
-
                     :
                     <SignedOutStack.Screen name="LoginButtonPage" component={LoginPage} />
             }
@@ -219,7 +239,11 @@ function App() {
         responseListener.current  =
             Notifications.addNotificationResponseReceivedListener((response) => {
                 console.log(response);
-                //Todo: (This triggers when notification clicked) - go to appointment screen
+                navigate('SignIn', {
+                        screen: 'TodoSection', params: {
+                            screen: 'Appointments'
+                        }
+                    })
             });
 
         return () => {
@@ -236,7 +260,7 @@ function App() {
   return (
       <UserIdContext.Provider value={userIdValue}>
       <PushNotificationTokenContext.Provider value={expoPushToken}>
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <TopLevel.Navigator
         screenOptions={{
           headerShown: false,

@@ -1,42 +1,37 @@
 import {
-    Text,
-  View,
+    Pressable,
+    ScrollView, StyleSheet, Text,
+    View,
 } from "react-native";
-import {GovukH1} from "../../components/h1/styles";
-import {GovukH2} from "../../components/h2/styles";
-import {GovukInset} from "../../components/inset/styles";
-import {GovukHeader} from "../../components/header/styles";
-import {Page} from "../../components/page/styles";
-import {GovukH3} from "../../components/h3/styles";
-import {GovukWarningBorder, GovukWarningText} from "../../components/warning/styles";
-import {GovukText} from "../../components/text/styles";
-import {GovukPanel} from "../../components/panel/styles";
+import {Image} from "expo-image";
+import React from "react";
 
 const JournalPage = () => {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Page>
-                <GovukText>otherpage</GovukText>
-                <GovukH1>GovukH1</GovukH1>
-                <GovukH2>GovukH2</GovukH2>
-                <GovukH3>GovukH3</GovukH3>
-                <GovukWarningBorder>
-                    <GovukWarningText>warning text</GovukWarningText>
-                </GovukWarningBorder>
-                <GovukHeader>
-                    <GovukText>Header</GovukText>
-                </GovukHeader>
-                <GovukInset>
-                    <GovukText>
-                        Inset
-                    </GovukText>
-                </GovukInset>
-                <GovukPanel><Text>Panel</Text></GovukPanel>
-
-            </Page>
-        </View>
-
+        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Image
+                    style={styles.image}
+                    source="https://www.chrishyland.com/host/homeScreenshot.png"
+                    contentFit="cover"
+                />
+            </View>
+        </ScrollView>
     )
-} 
+}
+
+const styles = StyleSheet.create({
+    scrollViewContainer: {
+        flexGrow: 1,
+        backgroundColor: '#ffffff'
+    },
+    image: {
+        flex: 1,
+        width: '90%',
+        height: undefined,
+        aspectRatio: 1080 / 4596,
+        marginTop: 20
+    },
+});
 
 export default JournalPage

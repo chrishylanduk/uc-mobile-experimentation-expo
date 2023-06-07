@@ -21,22 +21,6 @@ const ClaimantHomePage = () => {
                 source="https://www.chrishyland.com/host/homeScreenshot.png"
                 contentFit="cover"
             />
-                {/*<Page>*/}
-                {/*    <GovukH1>Welcome John!</GovukH1>*/}
-                {/*    <GovukText>32 years old, partner of Jane Doe</GovukText>*/}
-
-                {/*    <GovukH2>Payments</GovukH2>*/}
-                {/*    <GovukInset>*/}
-                {/*        <GovukText>Your next payment will be</GovukText>*/}
-                {/*        <GovukH2>£1,432</GovukH2>*/}
-                {/*    </GovukInset>*/}
-
-                {/*    <GovukButton>*/}
-                {/*        <GovukButtonText>*/}
-                {/*            Go to payments*/}
-                {/*        </GovukButtonText>*/}
-                {/*    </GovukButton>*/}
-                {/*</Page>*/}
         </View>
         </ScrollView>
     )
