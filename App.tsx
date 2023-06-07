@@ -98,10 +98,11 @@ function LogoTitle()  {
 }
 
 function SignedInSection() {
-  return (
+    return (
     <SignedInStack.Navigator
       initialRouteName="Home"
       screenOptions={({ route }) => ({
+          headerTitleAlign: "center",
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: keyof typeof FontAwesome.glyphMap;
 
@@ -126,12 +127,15 @@ function SignedInSection() {
           return <FontAwesome name={iconName} size={size} color={color} />;
         },
         headerStyle: {
-          backgroundColor: "#ffffff"
+          backgroundColor: "#ffffff",
+            borderStyle: "solid",
+            borderBottomWidth: 2,
+            borderBottomColor: "#1d70b8"
         },
-          headerTitleStyle: {alignSelf: "center"},
         headerTintColor: "#fff",
         tabBarActiveTintColor: "#1d70b8",
         tabBarInactiveTintColor: "gray",
+          // @ts-ignore
           headerTitle: (props) => <LogoTitle {...props} />
       })}
     >
