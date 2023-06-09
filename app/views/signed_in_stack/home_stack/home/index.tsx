@@ -1,14 +1,6 @@
 import {
-    Text,
     View, StyleSheet, Animated
 } from "react-native";
-import SigninButton from "../../components/govuk/signin_button";
-import {Page} from "../../components/page/styles";
-import {GovukH1} from "../../components/h1/styles";
-import {GovukText} from "../../components/text/styles";
-import {GovukH2} from "../../components/h2/styles";
-import {GovukInset} from "../../components/inset/styles";
-import {GovukButton, GovukButtonText} from "../../components/button/styles";
 import {Image} from 'expo-image';
 import ScrollView = Animated.ScrollView;
 

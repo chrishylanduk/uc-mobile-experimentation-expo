@@ -4,9 +4,8 @@ import {
     Text,
     View,
 } from "react-native";
-import SigninButton from "../../components/govuk/signin_button";
-import React, {useContext} from "react";
-import {PushNotificationTokenContext} from "../../../App";
+import React from "react";
+import {PushNotificationTokenContext} from "../../../../../App";
 import {Image} from "expo-image";
 import ScrollView = Animated.ScrollView;
 

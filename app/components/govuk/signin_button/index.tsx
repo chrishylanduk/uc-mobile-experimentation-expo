@@ -1,8 +1,7 @@
 import * as LocalAuthentication from 'expo-local-authentication';
 import * as React from 'react';
 import { View } from 'react-native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import {RootStackParamList, UserIdContext} from '../../../../App';
+import {UserIdContext} from '../../../../App';
 import {GovukButton, GovukButtonText} from "../../button/styles";
 import {useContext} from "react";
 
@@ -13,7 +12,6 @@ enum EResult {
   ERROR = 'ERROR',
   SUCCESS = 'SUCCESS',
 }
-type homeScreenProp = NativeStackNavigationProp<RootStackParamList, 'SignedOut'>;
 
 const SigninButton: React.FC = () => {
   const [loading, setLoading] = React.useState(false);

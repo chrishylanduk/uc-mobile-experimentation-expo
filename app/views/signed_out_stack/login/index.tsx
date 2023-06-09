@@ -1,7 +1,7 @@
 import {
   View,
 } from "react-native";
-import SigninButton from "../../components/govuk/signin_button";
+import SigninButton from "../../../components/govuk/signin_button";
 
 
 

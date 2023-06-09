@@ -1,24 +1,15 @@
 import * as React from "react";
 import {Dispatch, SetStateAction, useEffect} from "react";
 import {NavigationContainer, NavigatorScreenParams} from "@react-navigation/native";
-import {createNativeStackNavigator, NativeStackNavigationProp} from "@react-navigation/native-stack";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import LoginPage from "./app/views/login";
-import ClaimantHomePage from "./app/views/claimant_home";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import SettingsPage from "./app/views/settings";
-import TodoPage from "./app/views/todos";
-import JournalPage from "./app/views/jounals";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
-import {Image} from 'expo-image';
 import {Subscription} from 'expo-modules-core';
 import {Platform,} from "react-native";
-import SplashPage from "./app/views/splash";
-import * as LocalAuthentication from "expo-local-authentication";
-import AppointmentPage from "./app/views/appointment";
-import { useNavigation } from '@react-navigation/native';
-import {navigate, navigationRef} from "./app/RootNavigation";
+import SignedOutSection from "./app/navigation/signed_out/SignedOutNavigation";
+import SignedInSection from "./app/navigation/signed_in/SignedInNavigation";
+import {navigate, navigationRef} from "./app/navigation/RootNavigation";
+import {RootNavigationType} from "./app/navigation/types";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -64,146 +55,11 @@ async function registerForPushNotificationsAsync() {
     return token;
 }
 
-export type RootStackParamList = {
-  SignedOut: SignedOutParamList;
-  SignIn: NavigatorScreenParams<SignedInParamList>;
-};
-
-export type SignedOutParamList = {
-    Splash: undefined;
-    LoginButtonPage: undefined;
-};
-
-export type SignedInParamList = {
-    Home: undefined;
-    Todo: NavigatorScreenParams<TodoParamList>;
-    Journals: undefined;
-    Settings: undefined;
-};
-
-export type TodoParamList = {
-    'Todo Page': undefined;
-    Appointments: undefined;
-}
-
 export type UserIdContextType = {
     userId: String,
     setUserId: Dispatch<SetStateAction<String>>
 }
 
-const SignedInStack = createBottomTabNavigator<SignedInParamList>();
-const TopLevel = createNativeStackNavigator<RootStackParamList>();
-const SignedOutStack = createNativeStackNavigator<SignedOutParamList>();
-const TodoStack = createNativeStackNavigator<TodoParamList>();
-
-function TodoSection() {
-    return (
-        <TodoStack.Navigator
-            screenOptions={{
-                headerShown: false,
-            }}
-        >
-            <TodoStack.Screen name="Todo Page" component={TodoPage} />
-            <TodoStack.Screen name="Appointments" component={AppointmentPage} />
-        </TodoStack.Navigator>
-    );
-}
-
-function LogoTitle()  {
-    return (
-        <Image
-            style={{ width: 120, height: 45, aspectRatio: 120 / 45}}
-            source={"https://www.chrishyland.com/host/fullLogo.png"}
-        />
-    );
-}
-
-function SignedInSection() {
-    return (
-    <SignedInStack.Navigator
-      initialRouteName="Home"
-      screenOptions={({ route }) => ({
-          headerTitleAlign: "center",
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName: keyof typeof FontAwesome.glyphMap;
-
-          switch (route.name) {
-            case "Home": {
-              iconName = "home";
-              break;
-            }
-            case "Todo": {
-              iconName = "clipboard";
-              break;
-            }
-            case "Journals": {
-              iconName = "book";
-              break;
-            }
-            default: {
-              iconName = "cog";
-              break;
-            }
-          }
-          return <FontAwesome name={iconName} size={size} color={color} />;
-        },
-        headerStyle: {
-          backgroundColor: "#ffffff",
-            borderStyle: "solid",
-            borderBottomWidth: 2,
-            borderBottomColor: "#1d70b8"
-        },
-        headerTintColor: "#fff",
-        tabBarActiveTintColor: "#1d70b8",
-        tabBarInactiveTintColor: "gray",
-          // @ts-ignore
-          headerTitle: (props) => <LogoTitle {...props} />
-      })}
-    >
-      <SignedInStack.Screen name="Home" component={ClaimantHomePage} />
-      <SignedInStack.Screen name="Todo" component={TodoSection} />
-      <SignedInStack.Screen name="Journals" component={JournalPage} />
-      <SignedInStack.Screen name="Settings" component={SettingsPage} />
-    </SignedInStack.Navigator>
-  );
-}
-
-
-function SignedOutSection() {
-    const [facialRecognitionAvailable, setFacialRecognitionAvailable] = React.useState(false);
-    const [fingerprintAvailable, setFingerprintAvailable] = React.useState(false);
-    const [irisAvailable, setIrisAvailable] = React.useState(false);
-    const [checkedBio, setCheckedBio] = React.useState<Promise<boolean>>();
-
-    const checkSupportedAuthentication = async () => {
-        const types = await LocalAuthentication.supportedAuthenticationTypesAsync();
-        if (types && types.length) {
-            setFacialRecognitionAvailable(types.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION));
-            setFingerprintAvailable(types.includes(LocalAuthentication.AuthenticationType.FINGERPRINT));
-            setIrisAvailable(types.includes(LocalAuthentication.AuthenticationType.IRIS));
-        }
-        return true;
-    };
-
-    React.useEffect(() => {
-        setCheckedBio(checkSupportedAuthentication());
-    }, []);
-
-    return (
-        <SignedOutStack.Navigator
-            screenOptions={{
-                headerShown: false,
-            }}
-        >
-            {
-                    (facialRecognitionAvailable || fingerprintAvailable || irisAvailable || !checkedBio) ?
-                    <SignedOutStack.Screen name="Splash" component={SplashPage} />//Todo pass in result to use in if above
-                    :
-                    <SignedOutStack.Screen name="LoginButtonPage" component={LoginPage} />
-            }
-        </SignedOutStack.Navigator>
-    );
-}
 
 export const PushNotificationTokenContext = React.createContext<String>("default");
 export const UserIdContext = React.createContext<UserIdContextType>({
@@ -236,6 +92,10 @@ function App() {
                 }
             });
 
+        type NotificationBody = {
+            topLevel: NavigatorScreenParams<any>,
+            params?: NotificationBody
+        }
         responseListener.current  =
             Notifications.addNotificationResponseReceivedListener((response) => {
                 console.log(response);
@@ -257,7 +117,10 @@ function App() {
             }
         };
     }, []);
-  return (
+
+    const TopLevel = createNativeStackNavigator<RootNavigationType>();
+
+    return (
       <UserIdContext.Provider value={userIdValue}>
       <PushNotificationTokenContext.Provider value={expoPushToken}>
     <NavigationContainer ref={navigationRef}>

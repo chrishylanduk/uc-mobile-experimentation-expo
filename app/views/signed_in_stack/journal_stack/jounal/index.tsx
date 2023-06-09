@@ -1,6 +1,6 @@
 import {
-    Pressable,
-    ScrollView, StyleSheet, Text,
+    ScrollView,
+    StyleSheet,
     View,
 } from "react-native";
 import {Image} from "expo-image";

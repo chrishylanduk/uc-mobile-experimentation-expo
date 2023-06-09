@@ -1,11 +1,8 @@
 import {
     ScrollView,
     StyleSheet,
-    Text,
     View,
 } from "react-native";
-import {Page} from "../../components/page/styles";
-import {GovukText} from "../../components/text/styles";
 import {Image} from "expo-image";
 
 const AppointmentPage = () => {

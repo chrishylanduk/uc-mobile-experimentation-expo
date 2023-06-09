@@ -1,10 +1,8 @@
 import {
     Animated,
     StyleSheet,
-    Text,
     View,
 } from "react-native";
-import SigninButton from "../../components/govuk/signin_button";
 import {Image} from "expo-image";
 import ScrollView = Animated.ScrollView;
 
