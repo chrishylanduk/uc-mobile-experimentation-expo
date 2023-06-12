@@ -5,7 +5,7 @@ import LoginPage from "../../views/signed_out_stack/login";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {SignedOutStackType} from "../types";
 
-function SignedOutSection() {
+function    SignedOutSection() {
     const [facialRecognitionAvailable, setFacialRecognitionAvailable] = React.useState(false);
     const [fingerprintAvailable, setFingerprintAvailable] = React.useState(false);
     const [irisAvailable, setIrisAvailable] = React.useState(false);

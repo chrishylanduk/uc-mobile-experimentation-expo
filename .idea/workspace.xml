@@ -9,17 +9,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad09cde-8770-406b-a8b5-cd39445f13fd" name="Changes" comment="AS: get an initial app working" />
+    <list default="true" id="fad09cde-8770-406b-a8b5-cd39445f13fd" name="Changes" comment="AS: Fix change todo page/section name">
+      <change afterPath="$PROJECT_DIR$/app/utilities/push_notifications/Register.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/Context.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/signed_in_stack/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/types/ContextTypes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/govuk/signin_button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/govuk/signin_button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/signed_in/home/HomeNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_in/home/HomeNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/signed_in/journal/JournalNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_in/journal/JournalNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/signed_in/settings/SettingsNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_in/settings/SettingsNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/signed_out/SignedOutNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_out/SignedOutNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/navigation/types.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/types.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/settings_stack/settings/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/settings_stack/settings/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/todo_stack/todos/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/todo_stack/todos/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/types/SignedInTypes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/types/SignedInTypes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signed_out_stack/login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_out_stack/login/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signed_out_stack/splash/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_out_stack/splash/index.tsx" afterDir="false" />
+    </list>
+    <list id="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" name="WebStorm" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uc-mobile-experimentation-expo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="11" end1="12" start2="11" end2="35" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="16" end1="16" start2="39" end2="46" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="19" end1="19" start2="49" end2="71" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="23" end1="23" start2="75" end2="78" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="30" end1="30" start2="85" end2="86" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="31" end1="31" start2="87" end2="90" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="32" end1="33" start2="91" end2="100" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="35" end1="35" start2="102" end2="118" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="81" end1="81" start2="164" end2="174" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="86" end1="86" start2="179" end2="180" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="90" end1="90" start2="184" end2="189" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
+        <range start1="98" end1="99" start2="197" end2="282" changelist="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" />
+        <range start1="101" end1="101" start2="284" end2="298" changelist="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" />
+        <range start1="103" end1="104" start2="300" end2="311" changelist="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2QeO8RA6OMXDwK2bkbakupJNBKZ" />
   <component name="ProjectViewState">
@@ -28,11 +83,39 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aidan/IdeaProjects/uc-mobile-experimentation-expo/app/views/signed_out_stack&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\aidan\\IdeaProjects\\uc-mobile-experimentation-expo\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_out_stack" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack\home_stack" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack\journals_stack" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack\settings_stack" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_out_stack\splash" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation\signed_in" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation\signed_out" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation\signed_in\todo" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="uc-mobile-experimentation-expo" />
@@ -79,15 +162,31 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <method v="2" />
     </configuration>
+    <configuration name="web" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="web" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="fad09cde-8770-406b-a8b5-cd39445f13fd" name="Changes" comment="" />
+      <changelist id="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" name="WebStorm" comment="" />
       <created>1685710424535</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685710424535</updated>
+      <workItem from="1686057017424" duration="9941000" />
+      <workItem from="1686124425955" duration="22196000" />
+      <workItem from="1686319730431" duration="6361000" />
+      <workItem from="1686560804823" duration="22314000" />
+      <workItem from="1686595144602" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="AS: get an initial app working">
       <created>1686042983304</created>

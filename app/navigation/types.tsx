@@ -3,6 +3,7 @@ import {NavigatorScreenParams} from "@react-navigation/native";
 export type RootNavigationType = {
     SignedOut: NavigatorScreenParams<SignedOutStackType>;
     SignIn: NavigatorScreenParams<SignedInStackType>;
+    SignInLoading: undefined;
 };
 
 export type SignedInStackType = {
@@ -18,19 +19,18 @@ export type SignedOutStackType = {
 };
 
 export type HomeStackType = {
-    Home: undefined;
+    'Home Page': undefined;
 }
 
 export type JournalStackType = {
-    Journal: undefined;
+    'Journal Page': undefined;
 }
 
 export type SettingsStackType = {
-    Settings: undefined;
+    'Settings Page': undefined;
 }
 
 export type TodoStackType = {
     'Todo Page': undefined;
     Appointments: undefined;
 }
-

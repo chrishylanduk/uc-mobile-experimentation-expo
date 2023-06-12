@@ -12,7 +12,7 @@ function JournalSection() {
                 headerShown: false,
             }}
         >
-            <JournalStack.Screen name="Journal" component={JournalPage}/>
+            <JournalStack.Screen name="Journal Page" component={JournalPage}/>
         </JournalStack.Navigator>
     );
 }

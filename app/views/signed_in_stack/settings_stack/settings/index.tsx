@@ -5,9 +5,9 @@ import {
     View,
 } from "react-native";
 import React from "react";
-import {PushNotificationTokenContext} from "../../../../../App";
 import {Image} from "expo-image";
 import ScrollView = Animated.ScrollView;
+import {PushNotificationTokenContext} from "../../../Context";
 
 const SettingsPage = () => {
     const token = React.useContext(PushNotificationTokenContext);

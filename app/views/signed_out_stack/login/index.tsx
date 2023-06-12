@@ -1,8 +1,5 @@
-import {
-  View,
-} from "react-native";
+import {View,} from "react-native";
 import SigninButton from "../../../components/govuk/signin_button";
-
 
 
 const LoginPage = () => {

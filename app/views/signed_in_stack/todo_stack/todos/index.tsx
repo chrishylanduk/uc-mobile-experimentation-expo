@@ -1,8 +1,4 @@
-import {
-    Animated,
-    StyleSheet,
-    View,
-} from "react-native";
+import {Animated, StyleSheet, View,} from "react-native";
 import {Image} from "expo-image";
 import ScrollView = Animated.ScrollView;
 

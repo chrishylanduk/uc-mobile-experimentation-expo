@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Dispatch, SetStateAction, useEffect} from "react";
+import {useEffect} from "react";
 import {NavigationContainer, NavigatorScreenParams} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import * as Notifications from "expo-notifications";
@@ -8,8 +8,11 @@ import {Subscription} from 'expo-modules-core';
 import {Platform,} from "react-native";
 import SignedOutSection from "./app/navigation/signed_out/SignedOutNavigation";
 import SignedInSection from "./app/navigation/signed_in/SignedInNavigation";
-import {navigate, navigationRef} from "./app/navigation/RootNavigation";
+import {navigationRef} from "./app/navigation/RootNavigation";
 import {RootNavigationType} from "./app/navigation/types";
+import {PageContext, UserIdContext} from "./app/views/Context";
+import {PageType} from "./app/views/types/ContextTypes";
+import SignInLoadingSection from "./app/views/signed_in_stack";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -55,23 +58,16 @@ async function registerForPushNotificationsAsync() {
     return token;
 }
 
-export type UserIdContextType = {
-    userId: String,
-    setUserId: Dispatch<SetStateAction<String>>
-}
-
 
 export const PushNotificationTokenContext = React.createContext<String>("default");
-export const UserIdContext = React.createContext<UserIdContextType>({
-    userId: "",
-    setUserId: () => {}
-});
 
 function App() {
     const [expoPushToken, setExpoPushToken] = React.useState<String>("");
     const [notification, setNotification] = React.useState<Notifications.Notification | boolean>(false);
     const [userId, setUserId] = React.useState<String>("");
     const userIdValue = {userId, setUserId};
+    const [page, setPage] = React.useState<PageType>({page: "Home", subpage: "Home Page", override: false});
+    const pageValue = {page, setPage}
 
     const notificationListener = React.useRef<Subscription>();
     const responseListener = React.useRef<Subscription>();
@@ -99,11 +95,7 @@ function App() {
         responseListener.current  =
             Notifications.addNotificationResponseReceivedListener((response) => {
                 console.log(response);
-                navigate('SignIn', {
-                        screen: 'Todo', params: {
-                            screen: 'Appointments'
-                        }
-                    })
+                setPage({page: "Todo", subpage: "Appointments", override: true})
             });
 
         return () => {
@@ -123,20 +115,28 @@ function App() {
     return (
       <UserIdContext.Provider value={userIdValue}>
       <PushNotificationTokenContext.Provider value={expoPushToken}>
+          <PageContext.Provider value={pageValue}>
     <NavigationContainer ref={navigationRef}>
       <TopLevel.Navigator
         screenOptions={{
           headerShown: false,
         }}
       >
-          {
-              userId === "" ?
-                  <TopLevel.Screen name="SignedOut" component={SignedOutSection} />
-                  :
-                  <TopLevel.Screen name="SignIn" component={SignedInSection} />
-          }
+      {
+          userId === "" ? (
+               <>
+                   <TopLevel.Screen name="SignedOut" component={SignedOutSection}/>
+               </>
+              ) : (
+                  <>
+                      <TopLevel.Screen name="SignInLoading" component={SignInLoadingSection}/>
+                      <TopLevel.Screen name="SignIn" component={SignedInSection}/>
+                  </>
+              )
+      }
       </TopLevel.Navigator>
     </NavigationContainer>
+          </PageContext.Provider>
     </PushNotificationTokenContext.Provider>
       </UserIdContext.Provider>
     );

@@ -1,9 +1,9 @@
 import * as LocalAuthentication from 'expo-local-authentication';
 import * as React from 'react';
-import { View } from 'react-native';
-import {UserIdContext} from '../../../../App';
+import {useContext} from 'react';
+import {View} from 'react-native';
 import {GovukButton, GovukButtonText} from "../../button/styles";
-import {useContext} from "react";
+import {PageContext, UserIdContext} from "../../../views/Context";
 
 
 enum EResult {
@@ -17,6 +17,7 @@ const SigninButton: React.FC = () => {
   const [loading, setLoading] = React.useState(false);
   const [result, setResult] = React.useState<EResult>();
   const {setUserId } = useContext(UserIdContext);
+  const {setPage} = useContext(PageContext);
 
   const login = () => {
     setUserId("user id")

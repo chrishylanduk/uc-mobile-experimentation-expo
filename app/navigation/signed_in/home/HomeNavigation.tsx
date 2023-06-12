@@ -12,7 +12,7 @@ function HomeSection() {
                 headerShown: false,
             }}
         >
-            <HomeStack.Screen name="Home" component={HomePage}/>
+            <HomeStack.Screen name="Home Page" component={HomePage}/>
         </HomeStack.Navigator>
     );
 }

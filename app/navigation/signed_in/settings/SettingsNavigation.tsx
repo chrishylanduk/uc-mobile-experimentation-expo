@@ -12,7 +12,7 @@ function SettingsSection() {
                 headerShown: false,
             }}
         >
-            <SettingsStack.Screen name="Settings" component={SettingsPage}/>
+            <SettingsStack.Screen name="Settings Page" component={SettingsPage}/>
         </SettingsStack.Navigator>
     );
 }

@@ -1,10 +1,8 @@
-import React, {useContext} from "react";
-import {StyleSheet, Text, View} from "react-native";
+import React from "react";
+import {StyleSheet, View} from "react-native";
 import {Image} from "expo-image";
-import {UserIdContext} from "../../../../App";
 
 const SplashPage = () => {
-    const {userId } = useContext(UserIdContext);
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image
@@ -12,9 +10,6 @@ const SplashPage = () => {
                 source={require('../../../../assets/images/splash.png')}
                 contentFit="contain">
             </Image>
-            <Text>
-                here:{userId}
-            </Text>
         </View>
     )
 }
