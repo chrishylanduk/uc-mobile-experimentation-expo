@@ -10,28 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fad09cde-8770-406b-a8b5-cd39445f13fd" name="Changes" comment="AS: Fix change todo page/section name">
-      <change afterPath="$PROJECT_DIR$/app/utilities/push_notifications/Register.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/Context.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/signed_in_stack/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/types/ContextTypes.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/button/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/govuk/signin_button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/govuk/signin_button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/signed_in/home/HomeNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_in/home/HomeNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/signed_in/journal/JournalNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_in/journal/JournalNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/signed_in/settings/SettingsNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_in/settings/SettingsNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/signed_out/SignedOutNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/signed_out/SignedOutNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/navigation/types.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/navigation/types.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/settings_stack/settings/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/settings_stack/settings/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/todo_stack/todos/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/todo_stack/todos/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/types/SignedInTypes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/types/SignedInTypes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signed_out_stack/login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_out_stack/login/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signed_out_stack/splash/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_out_stack/splash/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/home_stack/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/home_stack/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <list id="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" name="WebStorm" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uc-mobile-experimentation-expo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,28 +37,11 @@
     <option name="RESET_MODE" value="SOFT" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="11" end1="12" start2="11" end2="35" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="16" end1="16" start2="39" end2="46" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="19" end1="19" start2="49" end2="71" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="23" end1="23" start2="75" end2="78" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="30" end1="30" start2="85" end2="86" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="31" end1="31" start2="87" end2="90" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="32" end1="33" start2="91" end2="100" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="35" end1="35" start2="102" end2="118" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="81" end1="81" start2="164" end2="174" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="86" end1="86" start2="179" end2="180" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="90" end1="90" start2="184" end2="189" changelist="fad09cde-8770-406b-a8b5-cd39445f13fd" />
-        <range start1="98" end1="99" start2="197" end2="282" changelist="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" />
-        <range start1="101" end1="101" start2="284" end2="298" changelist="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" />
-        <range start1="103" end1="104" start2="300" end2="311" changelist="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -187,6 +157,9 @@
       <workItem from="1686319730431" duration="6361000" />
       <workItem from="1686560804823" duration="22314000" />
       <workItem from="1686595144602" duration="309000" />
+      <workItem from="1686676531609" duration="7916000" />
+      <workItem from="1686927184930" duration="2003000" />
+      <workItem from="1686930471785" duration="5439000" />
     </task>
     <task id="LOCAL-00001" summary="AS: get an initial app working">
       <created>1686042983304</created>
@@ -195,11 +168,119 @@
       <option name="project" value="LOCAL" />
       <updated>1686042983304</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="AS: change bits">
+      <created>1686059617744</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686059617744</updated>
+    </task>
+    <task id="LOCAL-00003" summary="AS: add base page">
+      <created>1686060350300</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686060350300</updated>
+    </task>
+    <task id="LOCAL-00004" summary="AS: fix inset">
+      <created>1686062154737</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686062154737</updated>
+    </task>
+    <task id="LOCAL-00005" summary="AS: small changes">
+      <created>1686063949403</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686063949403</updated>
+    </task>
+    <task id="LOCAL-00006" summary="AS: small changes again">
+      <created>1686065522105</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686065522106</updated>
+    </task>
+    <task id="LOCAL-00007" summary="AS: Make login process better">
+      <created>1686127814221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686127814221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="AS: Make login process better">
+      <created>1686133122049</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686133122049</updated>
+    </task>
+    <task id="LOCAL-00009" summary="AS: Fix login for browser">
+      <created>1686135578067</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686135578067</updated>
+    </task>
+    <task id="LOCAL-00010" summary="AS: Fix login for browser">
+      <created>1686135702235</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686135702235</updated>
+    </task>
+    <task id="LOCAL-00011" summary="AS: Have notification send to appointments">
+      <created>1686140127581</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686140127581</updated>
+    </task>
+    <task id="LOCAL-00012" summary="AS: Change todo page/section name">
+      <created>1686140800612</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686140800612</updated>
+    </task>
+    <task id="LOCAL-00013" summary="AS: Fix change todo page/section name">
+      <created>1686141069324</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686141069324</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="AS: get an initial app working" />
-    <option name="LAST_COMMIT_MESSAGE" value="AS: get an initial app working" />
+    <MESSAGE value="AS: change bits" />
+    <MESSAGE value="AS: add base page" />
+    <MESSAGE value="AS: fix inset" />
+    <MESSAGE value="AS: small changes" />
+    <MESSAGE value="AS: small changes again" />
+    <MESSAGE value="AS: Make login process better" />
+    <MESSAGE value="AS: Fix login for browser" />
+    <MESSAGE value="AS: Have notification send to appointments" />
+    <MESSAGE value="AS: Change todo page/section name" />
+    <MESSAGE value="AS: Fix change todo page/section name" />
+    <option name="LAST_COMMIT_MESSAGE" value="AS: Fix change todo page/section name" />
   </component>
 </project>

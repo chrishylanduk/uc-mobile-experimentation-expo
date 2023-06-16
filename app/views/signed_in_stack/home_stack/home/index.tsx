@@ -1,14 +1,25 @@
 import { View, StyleSheet, Animated, Image } from "react-native";
 import ScrollView = Animated.ScrollView;
+import GovukButton from "../../../../components/button";
+import {navigate} from "../../../../navigation/RootNavigation";
 
 const ClaimantHomePage = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Image
-          style={styles.image}
-          source={require("../../../../../assets/images/homeScreenshot.png")}
-        />
+          <View style={{width: '80%'}}>
+
+              {/*<Image*/}
+            {/*  style={styles.image}*/}
+            {/*  source={require("../../../../../assets/images/homeScreenshot.png")}*/}
+            {/*/>*/}
+              <GovukButton
+                  text='test'
+                  onPress={() =>
+                      navigate("SignIn", {screen: "Todo", params: {screen: "Home"}})
+                  }
+              />
+          </View>
       </View>
     </ScrollView>
   );
