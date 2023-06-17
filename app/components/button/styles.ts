@@ -1,27 +1,38 @@
-import { Pressable, Text } from "react-native";
-import styled from "styled-components/native";
+import {StyleSheet} from "react-native";
 
-export const GovukButton = styled(Pressable)`
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  margin-bottom: 22px;
-  padding-top: 8px;
-  padding-right: 10px;
-  padding-bottom: 7px;
-  padding-left: 10px;
-  border-width: 2px;
-  border-color: rgba(0,0,0,0);
-  border-style: solid;
-  border-radius: 0;
-  background-color: #00703c;
-  //box-shadow: 0 -2 0 0 #002d18;
-  vertical-align: top;
-`;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    text: {
+        fontWeight: '400',
+        fontSize: 16,
+        color: 'white',
+    },
+    buttonContainer: {
+        marginBottom: 22,
+        alignItems: 'center',
+        maxWidth: '100%',
+    },
+    buttonCommon:{
+        position: 'relative',
+        paddingTop: 8,
+        paddingRight: 10,
+        paddingBottom: 7,
+        paddingLeft: 10,
+        borderRadius: 0,
+        borderWidth: 3,
+        borderStyle: 'solid',
+        backgroundColor: '#00703c',
+        alignItems: 'center',
+    },
+    wrapperCustom: {
+        borderColor: 'rgba(0, 0, 0, 0)',
+    },
+    pressedDown: {
+        borderColor: '#fd0',
+    }
+});
 
-export const GovukButtonText = styled(Text)`
-  color: #fff;
-  text-align: center;
-  font-weight: 400;
-  font-size: 30px;
-`
+export default styles

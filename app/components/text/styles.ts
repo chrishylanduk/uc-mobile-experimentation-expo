@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import styled from "styled-components/native";
 
 export const GovukText = StyleSheet.create({
   textLarge: {
@@ -20,4 +19,18 @@ export const GovukText = StyleSheet.create({
     "marginTop": 0,
     "marginBottom": 15
   },
+})
+
+export const commonText = StyleSheet.create({
+  container: {
+    marginTop: 0,
+    flex: 1,
+    justifyContent: 'center',
+    paddingTop: 0,
+  },
+  header: {
+    color: "#0b0c0c",
+    fontFamily: "arial",
+    fontWeight: '700',
+  }
 })

@@ -1,5 +1,10 @@
-import { SafeAreaView } from "react-native";
-import styled from "styled-components/native";
+import {StyleSheet} from "react-native";
 
-export const Page = styled(SafeAreaView)`
-`
+const styles = StyleSheet.create({
+    scrollViewContainer: {
+        flexGrow: 1,
+        backgroundColor: "#ffffff",
+    },
+});
+
+export default styles;

@@ -9,14 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad09cde-8770-406b-a8b5-cd39445f13fd" name="Changes" comment="AS: Fix change todo page/section name">
-      <change afterPath="$PROJECT_DIR$/app/components/button/index.tsx" afterDir="false" />
+    <list default="true" id="fad09cde-8770-406b-a8b5-cd39445f13fd" name="Changes" comment="AS: Refactor and add h1/h2/h3">
+      <change afterPath="$PROJECT_DIR$/app/components/button/types.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/page/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/page/types.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/text/h1/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/text/h1/styles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/text/h2/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/text/h3/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/text/types.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utilities/login/authenticate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utilities/login/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/button/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/button/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/govuk/signin_button/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/govuk/signin_button/utilities/biometrics.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/h1/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/h2/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/text/h2/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/h3/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/text/h3/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/header/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/text/header/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/page/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/page/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/text/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/text/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/signed_in_stack/home_stack/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_in_stack/home_stack/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signed_out_stack/login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signed_out_stack/login/index.tsx" afterDir="false" />
     </list>
-    <list id="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" name="WebStorm" comment="">
+    <list id="4ca971bb-aaf2-4d2d-9ee0-6db4bfaafe8f" name="WebStorm" comment="WebStorm">
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uc-mobile-experimentation-expo.iml" afterDir="false" />
     </list>
@@ -51,39 +69,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aidan/IdeaProjects/uc-mobile-experimentation-expo/app/views/signed_out_stack&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\aidan\\IdeaProjects\\uc-mobile-experimentation-expo\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/aidan/IdeaProjects/uc-mobile-experimentation-expo/app/components/text/h3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "terminal",
+    "ts.external.directory.path": "C:\\Users\\aidan\\IdeaProjects\\uc-mobile-experimentation-expo\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\components\text\h3" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\components\text\h2" />
       <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_out_stack" />
       <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack\home_stack" />
       <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack\journals_stack" />
-      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack\settings_stack" />
-      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_out_stack\splash" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\components\text" />
+      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\utilities\login" />
       <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\views\signed_in_stack" />
       <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation" />
       <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation\signed_in" />
-      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation\signed_out" />
-      <recent name="C:\Users\aidan\IdeaProjects\uc-mobile-experimentation-expo\app\navigation\signed_in\todo" />
     </key>
   </component>
   <component name="RunManager">
@@ -159,7 +177,8 @@
       <workItem from="1686595144602" duration="309000" />
       <workItem from="1686676531609" duration="7916000" />
       <workItem from="1686927184930" duration="2003000" />
-      <workItem from="1686930471785" duration="5439000" />
+      <workItem from="1686930471785" duration="5878000" />
+      <workItem from="1687020130813" duration="5707000" />
     </task>
     <task id="LOCAL-00001" summary="AS: get an initial app working">
       <created>1686042983304</created>
@@ -252,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686141069324</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="AS: Add button component">
+      <created>1686938947990</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686938947991</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +307,8 @@
     <MESSAGE value="AS: Have notification send to appointments" />
     <MESSAGE value="AS: Change todo page/section name" />
     <MESSAGE value="AS: Fix change todo page/section name" />
-    <option name="LAST_COMMIT_MESSAGE" value="AS: Fix change todo page/section name" />
+    <MESSAGE value="AS: Add button component" />
+    <MESSAGE value="AS: Refactor and add h1/h2/h3" />
+    <option name="LAST_COMMIT_MESSAGE" value="AS: Refactor and add h1/h2/h3" />
   </component>
 </project>

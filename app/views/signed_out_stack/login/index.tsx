@@ -1,13 +1,28 @@
-import {View,} from "react-native";
-import SigninButton from "../../../components/govuk/signin_button";
+import {useContext} from "react";
+import {UserIdContext} from "../../Context";
+import * as React from "react";
+import authenticate from "../../../utilities/login/authenticate";
+import login from "../../../utilities/login/login";
+import GovukButton from "../../../components/button";
+import Page from "../../../components/page";
 
 
 const LoginPage = () => {
+    const {setUserId } = useContext(UserIdContext);
+
+    React.useEffect(() => {
+        authenticate(setUserId).catch();
+    }, []);
+
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <SigninButton
+        <Page content={
+            <GovukButton
+                text='Sign in'
+                onPress={() =>
+                    login(setUserId)
+                }
             />
-        </View>
+        }/>
     )
 } 
 
