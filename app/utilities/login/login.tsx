@@ -1,7 +1,7 @@
-import {Dispatch, SetStateAction} from "react";
+import { Dispatch, SetStateAction } from "react";
 
 const login = (setUserId: Dispatch<SetStateAction<String>>) => {
-    setUserId("user id")
+  setUserId("user id");
 };
 
-export default login
+export default login;

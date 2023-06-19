@@ -1,36 +1,36 @@
-import {NavigatorScreenParams} from "@react-navigation/native";
+import { NavigatorScreenParams } from "@react-navigation/native";
 
 export type RootNavigationType = {
-    SignedOut: NavigatorScreenParams<SignedOutStackType>;
-    SignIn: NavigatorScreenParams<SignedInStackType>;
-    SignInLoading: undefined;
+  SignedOut: NavigatorScreenParams<SignedOutStackType>;
+  SignIn: NavigatorScreenParams<SignedInStackType>;
+  SignInLoading: undefined;
 };
 
 export type SignedInStackType = {
-    Home: NavigatorScreenParams<HomeStackType>;
-    Todo: NavigatorScreenParams<TodoStackType>;
-    Journals: NavigatorScreenParams<JournalStackType>;
-    Settings: NavigatorScreenParams<SettingsStackType>;
+  Home: NavigatorScreenParams<HomeStackType>;
+  Todo: NavigatorScreenParams<TodoStackType>;
+  Journals: NavigatorScreenParams<JournalStackType>;
+  Settings: NavigatorScreenParams<SettingsStackType>;
 };
 
 export type SignedOutStackType = {
-    Splash: undefined;
-    LoginButtonPage: undefined;
+  Splash: undefined;
+  LoginButtonPage: undefined;
 };
 
 export type HomeStackType = {
-    'Home Page': undefined;
-}
+  "Home Page": undefined;
+};
 
 export type JournalStackType = {
-    'Journal Page': undefined;
-}
+  "Journal Page": undefined;
+};
 
 export type SettingsStackType = {
-    'Settings Page': undefined;
-}
+  "Settings Page": undefined;
+};
 
 export type TodoStackType = {
-    'Todo Page': undefined;
-    Appointments: undefined;
-}
+  "Todo Page": undefined;
+  Appointments: undefined;
+};

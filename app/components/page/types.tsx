@@ -1,3 +1,3 @@
 export type pagePropType = {
-    content: JSX.Element | JSX.Element[]
-}
+  content: JSX.Element | JSX.Element[];
+};

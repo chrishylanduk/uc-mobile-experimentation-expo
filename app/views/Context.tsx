@@ -1,13 +1,14 @@
 import * as React from "react";
-import {PageContextType, UserIdContextType} from "./types/ContextTypes";
+import { PageContextType, UserIdContextType } from "./types/ContextTypes";
 
-export const PushNotificationTokenContext = React.createContext<String>("default");
+export const PushNotificationTokenContext =
+  React.createContext<String>("default");
 export const UserIdContext = React.createContext<UserIdContextType>({
-    userId: "",
-    setUserId: () => {}
+  userId: "",
+  setUserId: () => {},
 });
 
 export const PageContext = React.createContext<PageContextType>({
-    page: {page: "Home", subpage: "Home", override: false},
-    setPage: () => {},
+  page: { page: "Home", subpage: "Home", override: false },
+  setPage: () => {},
 });

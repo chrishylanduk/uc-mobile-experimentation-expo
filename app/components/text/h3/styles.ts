@@ -10,6 +10,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 1.15,
   },
-})
+});
 
 export default styles;

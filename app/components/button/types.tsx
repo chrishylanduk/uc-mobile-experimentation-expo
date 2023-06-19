@@ -1,4 +1,4 @@
 export type buttonPropType = {
-    text: String,
-    onPress: () => void,
-}
+  text: String;
+  onPress: () => void;
+};
