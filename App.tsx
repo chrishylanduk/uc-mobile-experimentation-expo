@@ -1,14 +1,9 @@
 import * as React from "react";
 import { useEffect } from "react";
 import {
-  NavigationContainer,
-  NavigatorScreenParams,
+  NavigationContainer
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import * as Notifications from "expo-notifications";
-import * as Device from "expo-device";
-import { Subscription } from "expo-modules-core";
-import { Platform } from "react-native";
 import SignedOutSection from "./app/navigation/signed_out/SignedOutNavigation";
 import SignedInSection from "./app/navigation/signed_in/SignedInNavigation";
 import { navigationRef } from "./app/navigation/RootNavigation";
@@ -16,26 +11,10 @@ import { RootNavigationType } from "./app/navigation/types";
 import { PageContext, UserIdContext } from "./app/views/Context";
 import { PageType } from "./app/views/types/ContextTypes";
 import SignInLoadingSection from "./app/views/signed_in_stack";
-import { PushNotificationTokenContext } from "./app/views/Context";
-import registerForPushNotificationsAsync from "./app/utilities/push_notifications/Register";
 import OneSignal from "react-native-onesignal";
 import Constants from "expo-constants";
 
-OneSignal.setAppId(Constants.manifest?.extra?.oneSignalAppId);
-
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
-  }),
-});
-
 function App() {
-  const [expoPushToken, setExpoPushToken] = React.useState<String>("");
-  const [notification, setNotification] = React.useState<
-    Notifications.Notification | boolean
-  >(false);
   const [userId, setUserId] = React.useState<String>("");
   const userIdValue = { userId, setUserId };
   const [page, setPage] = React.useState<PageType>({
@@ -45,50 +24,18 @@ function App() {
   });
   const pageValue = { page, setPage };
 
-  const notificationListener = React.useRef<Subscription>();
-  const responseListener = React.useRef<Subscription>();
-
   useEffect(() => {
-    registerForPushNotificationsAsync().then((token) => {
-      if (token) {
-        setExpoPushToken(token);
-      }
+    OneSignal.setAppId(Constants.manifest?.extra?.oneSignalAppId);
+    OneSignal.promptForPushNotificationsWithUserResponse();
+    OneSignal.setNotificationOpenedHandler(notification => {
+      setPage({ page: "Todo", subpage: "Appointments", override: true });
     });
-
-    notificationListener.current =
-      Notifications.addNotificationReceivedListener((notification) => {
-        if (notification) {
-          setNotification(notification);
-        }
-      });
-
-    type NotificationBody = {
-      topLevel: NavigatorScreenParams<any>;
-      params?: NotificationBody;
-    };
-    responseListener.current =
-      Notifications.addNotificationResponseReceivedListener((response) => {
-        console.log(response);
-        setPage({ page: "Todo", subpage: "Appointments", override: true });
-      });
-
-    return () => {
-      if (notificationListener.current) {
-        Notifications.removeNotificationSubscription(
-          notificationListener.current
-        );
-      }
-      if (responseListener.current) {
-        Notifications.removeNotificationSubscription(responseListener.current);
-      }
-    };
   }, []);
 
   const TopLevel = createNativeStackNavigator<RootNavigationType>();
 
   return (
     <UserIdContext.Provider value={userIdValue}>
-      <PushNotificationTokenContext.Provider value={expoPushToken}>
         <PageContext.Provider value={pageValue}>
           <NavigationContainer ref={navigationRef}>
             <TopLevel.Navigator
@@ -115,7 +62,6 @@ function App() {
             </TopLevel.Navigator>
           </NavigationContainer>
         </PageContext.Provider>
-      </PushNotificationTokenContext.Provider>
     </UserIdContext.Provider>
   );
 }
