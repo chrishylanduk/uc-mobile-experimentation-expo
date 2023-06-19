@@ -31,7 +31,7 @@ jobs:
         run: |
           eas build --local \
             --non-interactive \
-            --output=./app-build \
+            --output=./app-build/app-android.apk \
             --platform=android \
             --profile=preview
 
@@ -39,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: app-android
-          path: app-build
+          path: app-build/app-android.apk
