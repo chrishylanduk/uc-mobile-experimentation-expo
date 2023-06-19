@@ -2,6 +2,7 @@
   "expo": {
     "name": "Universal Credit",
     "slug": "uc-mobile-experimentation-expo",
+    "owner": "pebblewash",
     "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -12,9 +13,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.pebblewash.ucmobileexperimentationexpo"
