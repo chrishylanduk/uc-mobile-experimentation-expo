@@ -13,6 +13,7 @@ import {RootNavigationType} from "./app/navigation/types";
 import {PageContext, UserIdContext} from "./app/views/Context";
 import {PageType} from "./app/views/types/ContextTypes";
 import SignInLoadingSection from "./app/views/signed_in_stack";
+import { PushNotificationTokenContext } from "./app/views/Context";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -57,9 +58,6 @@ async function registerForPushNotificationsAsync() {
 
     return token;
 }
-
-
-export const PushNotificationTokenContext = React.createContext<String>("default");
 
 function App() {
     const [expoPushToken, setExpoPushToken] = React.useState<String>("");
