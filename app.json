@@ -3,7 +3,7 @@
     "name": "Universal Credit",
     "slug": "uc-mobile-experimentation-expo",
     "owner": "pebblewash",
-    "version": "1.0.3",
+    "version": "1.0.9",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -23,6 +23,7 @@
       "favicon": "./assets/images/icon.png"
     },
     "extra": {
+      "oneSignalAppId": "5e7dfc34-cf3d-416b-92d3-818d9276076c",
       "eas": {
         "projectId": "7645614d-1920-428a-b8eb-4e3594519339"
       }
@@ -32,6 +33,13 @@
       "googleServicesFile": "./google-services.json"
     },
     "plugins": [
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development",
+          "smallIcon": ["./assets/images/notificationIcon.png"]
+        }
+      ],
       [
         "expo-notifications",
         {

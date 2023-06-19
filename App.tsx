@@ -18,6 +18,10 @@ import { PageType } from "./app/views/types/ContextTypes";
 import SignInLoadingSection from "./app/views/signed_in_stack";
 import { PushNotificationTokenContext } from "./app/views/Context";
 import registerForPushNotificationsAsync from "./app/utilities/push_notifications/Register";
+import OneSignal from "react-native-onesignal";
+import Constants from "expo-constants";
+
+OneSignal.setAppId(Constants.manifest?.extra?.oneSignalAppId);
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
