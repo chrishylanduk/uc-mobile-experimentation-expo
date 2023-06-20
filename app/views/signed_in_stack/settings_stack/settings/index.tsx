@@ -1,15 +1,8 @@
-import {
-  Animated,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-} from "react-native";
-import React from "react";
+import { Animated, Pressable, StyleSheet, View, Image } from "react-native";
+import React, { type ReactElement } from "react";
 import ScrollView = Animated.ScrollView;
 
-const SettingsPage = () => {
+const SettingsPage = (): ReactElement => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

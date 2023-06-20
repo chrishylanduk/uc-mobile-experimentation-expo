@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 
-const login = (setUserId: Dispatch<SetStateAction<String>>) => {
+const login = (setUserId: Dispatch<SetStateAction<string>>): void => {
   setUserId("user id");
 };
 

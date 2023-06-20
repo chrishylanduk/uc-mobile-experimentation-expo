@@ -2,9 +2,10 @@ import TodoPage from "../../../views/signed_in_stack/todo_stack/todos";
 import AppointmentPage from "../../../views/signed_in_stack/todo_stack/appointment";
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { TodoStackType } from "../../types";
+import { type TodoStackType } from "../../types";
+import { type ReactElement } from "react";
 
-function TodoSection() {
+function TodoSection(): ReactElement {
   const TodoStack = createNativeStackNavigator<TodoStackType>();
 
   return (

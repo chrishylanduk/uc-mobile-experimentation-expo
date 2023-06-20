@@ -1,0 +1,54 @@
+name: Push Pipeline
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18.x]
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
+
+      - name: Check code is Prettier
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --check **/*.{js,ts,jsx,tsx}
+          dry: True
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: 🏗 Setup Expo and EAS
+        uses: expo/expo-github-action@v8
+        with:
+          token: ${{ secrets.EXPO_TOKEN }}
+          expo-version: latest
+          eas-version: latest
+          packager: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npx eslint .
+
+      - name: 📋 Test project
+        run: npm test
+
+      - name: 👷 Build preview APK (Android)
+        run: |
+          eas build --local \
+            --non-interactive \
+            --output=./app-build/app-android.apk \
+            --platform=android \
+            --profile=preview
+
+      - name: 📱 Upload binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-android
+          path: app-build/app-android.apk

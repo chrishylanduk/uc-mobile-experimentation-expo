@@ -1,8 +1,9 @@
-import { FC } from "react";
+import { type FC } from "react";
 import { Text } from "react-native";
-import { textPropType } from "../types";
+import { type textPropType } from "../types";
 import styles from "./styles";
 import { commonText } from "../styles";
+import React from "react";
 
 const GovukH2: FC<textPropType> = (props) => {
   return (

@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import styled from "styled-components/native";
 
 export const GovukWarning = StyleSheet.create({
   border: {
