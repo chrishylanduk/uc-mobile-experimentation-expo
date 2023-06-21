@@ -1,3 +1,3 @@
 export type textPropType = {
-    text: string,
-}
+  text: string;
+};

@@ -7,8 +7,8 @@ import JournalSection from "./journal/JournalNavigation";
 import LogoTitle from "../../components/logo_title";
 import { type SignedInStackType } from "../types";
 import { type ReactElement } from "react";
-import {type IconProp} from "@fortawesome/fontawesome-svg-core";
-import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
+import { type IconProp } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 function SignedInSection(): ReactElement {
   const SignedInStack = createBottomTabNavigator<SignedInStackType>();
