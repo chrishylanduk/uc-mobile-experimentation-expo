@@ -1,4 +1,3 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TodoSection from "./todo/TodoNavigation";
@@ -8,6 +7,8 @@ import JournalSection from "./journal/JournalNavigation";
 import LogoTitle from "../../components/logo_title";
 import { type SignedInStackType } from "../types";
 import { type ReactElement } from "react";
+import {IconProp} from "@fortawesome/fontawesome-svg-core";
+import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 
 function SignedInSection(): ReactElement {
   const SignedInStack = createBottomTabNavigator<SignedInStackType>();
@@ -17,28 +18,28 @@ function SignedInSection(): ReactElement {
       initialRouteName="Home"
       screenOptions={({ route }) => ({
         headerTitleAlign: "center",
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName: keyof typeof FontAwesome.glyphMap;
+        tabBarIcon: ({ color, size }) => {
+          let icon: IconProp;
 
           switch (route.name) {
             case "Home": {
-              iconName = "home";
+              icon = "home";
               break;
             }
             case "Todo": {
-              iconName = "clipboard";
+              icon = "clipboard";
               break;
             }
             case "Journals": {
-              iconName = "book";
+              icon = "book";
               break;
             }
             default: {
-              iconName = "cog";
+              icon = "cog";
               break;
             }
           }
-          return <FontAwesome name={iconName} size={size} color={color} />;
+          return <FontAwesomeIcon icon={icon} size={size} color={color} />;
         },
         headerStyle: {
           backgroundColor: "#ffffff",

@@ -1,20 +1,24 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from "react-native";
 
-export const GovukWarning = StyleSheet.create({
-  border: {
-    position: "relative",
-    marginBottom: 20,
-    paddingTop: 10,
-    paddingRight: 0,
-    paddingBottom: 10,
-    paddingLeft: 0,
-  },
-  text: {
-    fontFamily: "arial",
-    fontWeight: "700",
-    fontSize: 16,
-    lineHeight: 1.25,
-    color: "#0b0c0c",
-    paddingLeft: 45,
-  },
-});
+export const warning = StyleSheet.create({
+    text: {
+        fontWeight: '700',
+        paddingLeft: 45,
+        fontSize: 19,
+    },
+    icon: {
+        position: 'absolute',
+        minWidth: 35,
+        minHeight: 35,
+        marginTop: 8,
+        fontWeight: '700',
+        fontSize: 30,
+    },
+    container: {
+        marginBottom: 20,
+        paddingTop: 10,
+        paddingBottom: 10,
+        position: 'relative',
+        marginTop: -5,
+    },
+})
