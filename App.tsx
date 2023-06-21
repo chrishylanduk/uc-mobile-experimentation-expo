@@ -63,7 +63,7 @@ function App(): ReactElement {
                 <TopLevel.Screen name="SignIn" component={SignedInSection} />
               </>
             )}
-          </TopLevel.Navigator>
+           </TopLevel.Navigator>
         </NavigationContainer>
       </PageContext.Provider>
     </UserIdContext.Provider>

@@ -1,6 +1,6 @@
-import {FC} from "react";
+import React, {type FC} from "react";
 import {Text} from "react-native";
-import {textPropType} from "../../types";
+import {type textPropType} from "../../types";
 import styles from "./styles";
 import {commonText} from "../../styles";
 import {headerText} from "../styles";
