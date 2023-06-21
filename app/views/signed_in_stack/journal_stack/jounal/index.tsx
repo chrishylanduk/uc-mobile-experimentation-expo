@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View, Image } from "react-native";
-import React from "react";
+import React, { type ReactElement } from "react";
 
-const JournalPage = () => {
+const JournalPage = (): ReactElement => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

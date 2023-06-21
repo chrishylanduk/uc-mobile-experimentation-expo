@@ -1,6 +1,8 @@
 import { ScrollView, StyleSheet, View, Image } from "react-native";
+import { type ReactElement } from "react";
+import React from "react";
 
-const AppointmentPage = () => {
+const AppointmentPage = (): ReactElement => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -8,22 +10,22 @@ const AppointmentPage = () => {
           style={styles.image}
           source={require("../../../../../assets/images/appointmentScreenshot.jpg")}
         />
-        {/*<Page>*/}
-        {/*    <GovukH1>Welcome John!</GovukH1>*/}
-        {/*    <GovukText>32 years old, partner of Jane Doe</GovukText>*/}
+        {/* <Page> */}
+        {/*    <GovukH1>Welcome John!</GovukH1> */}
+        {/*    <GovukText>32 years old, partner of Jane Doe</GovukText> */}
 
-        {/*    <GovukH2>Payments</GovukH2>*/}
-        {/*    <GovukInset>*/}
-        {/*        <GovukText>Your next payment will be</GovukText>*/}
-        {/*        <GovukH2>£1,432</GovukH2>*/}
-        {/*    </GovukInset>*/}
+        {/*    <GovukH2>Payments</GovukH2> */}
+        {/*    <GovukInset> */}
+        {/*        <GovukText>Your next payment will be</GovukText> */}
+        {/*        <GovukH2>£1,432</GovukH2> */}
+        {/*    </GovukInset> */}
 
-        {/*    <GovukButton>*/}
-        {/*        <GovukButtonText>*/}
-        {/*            Go to payments*/}
-        {/*        </GovukButtonText>*/}
-        {/*    </GovukButton>*/}
-        {/*</Page>*/}
+        {/*    <GovukButton> */}
+        {/*        <GovukButtonText> */}
+        {/*            Go to payments */}
+        {/*        </GovukButtonText> */}
+        {/*    </GovukButton> */}
+        {/* </Page> */}
       </View>
     </ScrollView>
   );

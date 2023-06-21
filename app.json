@@ -29,7 +29,7 @@
       }
     },
     "android": {
-      "package": "com.pebblewash.ucmobileexperimentationexpo",
+      "package": "com.pebblewash.ucmobileexperimentationexpo"
     },
     "plugins": [
       [

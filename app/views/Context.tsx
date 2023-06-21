@@ -1,5 +1,8 @@
 import * as React from "react";
-import { PageContextType, UserIdContextType } from "./types/ContextTypes";
+import {
+  type PageContextType,
+  type UserIdContextType,
+} from "./types/ContextTypes";
 
 export const UserIdContext = React.createContext<UserIdContextType>({
   userId: "",
@@ -7,6 +10,6 @@ export const UserIdContext = React.createContext<UserIdContextType>({
 });
 
 export const PageContext = React.createContext<PageContextType>({
-  page: { page: "Home", subpage: "Home", override: false },
+  page: { page: "Home", subpage: "Home Page", override: false },
   setPage: () => {},
 });

@@ -1,7 +1,8 @@
 import { Image } from "react-native";
 import * as React from "react";
+import { type ReactElement } from "react";
 
-function LogoTitle() {
+function LogoTitle(): ReactElement {
   return (
     <Image
       style={{ width: 120, height: 45 }}

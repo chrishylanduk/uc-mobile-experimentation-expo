@@ -1,15 +1,15 @@
-import { Dispatch, SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import {
-  HomeStackType,
-  JournalStackType,
-  SettingsStackType,
-  SignedInStackType,
-  TodoStackType,
+  type HomeStackType,
+  type JournalStackType,
+  type SettingsStackType,
+  type SignedInStackType,
+  type TodoStackType,
 } from "../../navigation/types";
 
 export type UserIdContextType = {
-  userId: String;
-  setUserId: Dispatch<SetStateAction<String>>;
+  userId: string;
+  setUserId: Dispatch<SetStateAction<string>>;
 };
 
 export type PageType = {

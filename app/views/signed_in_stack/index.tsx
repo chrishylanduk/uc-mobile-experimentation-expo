@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { type ReactElement, useContext } from "react";
 import { PageContext } from "../Context";
 import { navigate } from "../../navigation/RootNavigation";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 
-const SignInLoadingSection = () => {
+const SignInLoadingSection = (): ReactElement => {
   const { page, setPage } = useContext(PageContext);
 
   navigate("SignIn", { screen: page.page, params: { screen: page.subpage } });
@@ -14,14 +14,5 @@ const SignInLoadingSection = () => {
 
   return <View />;
 };
-
-const styles = StyleSheet.create({
-  image2: {
-    flex: 1,
-    width: "90%",
-    height: undefined,
-    aspectRatio: 1434 / 1804,
-  },
-});
 
 export default SignInLoadingSection;

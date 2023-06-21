@@ -1,8 +1,8 @@
-import React from "react";
+import React, { type ReactElement } from "react";
 import { StyleSheet, View } from "react-native";
 import { Image } from "expo-image";
 
-const SplashPage = () => {
+const SplashPage = (): ReactElement => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Image

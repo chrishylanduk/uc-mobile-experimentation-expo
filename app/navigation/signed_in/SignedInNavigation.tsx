@@ -6,9 +6,10 @@ import SettingsSection from "./settings/SettingsNavigation";
 import HomeSection from "./home/HomeNavigation";
 import JournalSection from "./journal/JournalNavigation";
 import LogoTitle from "../../components/logo_title";
-import { SignedInStackType } from "../types";
+import { type SignedInStackType } from "../types";
+import { type ReactElement } from "react";
 
-function SignedInSection() {
+function SignedInSection(): ReactElement {
   const SignedInStack = createBottomTabNavigator<SignedInStackType>();
 
   return (
@@ -48,7 +49,7 @@ function SignedInSection() {
         headerTintColor: "#fff",
         tabBarActiveTintColor: "#1d70b8",
         tabBarInactiveTintColor: "gray",
-        // @ts-ignore
+        // @ts-expect-error Temporary
         headerTitle: (props) => <LogoTitle {...props} />,
       })}
     >

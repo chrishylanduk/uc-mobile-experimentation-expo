@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { type ReactElement, useContext } from "react";
 import { UserIdContext } from "../../Context";
 import * as React from "react";
 import authenticate from "../../../utilities/login/authenticate";
@@ -6,16 +6,23 @@ import login from "../../../utilities/login/login";
 import GovukButton from "../../../components/button";
 import Page from "../../../components/page";
 
-const LoginPage = () => {
+const LoginPage = (): ReactElement => {
   const { setUserId } = useContext(UserIdContext);
 
   React.useEffect(() => {
-    authenticate(setUserId).catch();
+    void authenticate(setUserId).catch();
   }, []);
 
   return (
     <Page
-      content={<GovukButton text="Sign in" onPress={() => login(setUserId)} />}
+      content={
+        <GovukButton
+          text="Sign in"
+          onPress={() => {
+            login(setUserId);
+          }}
+        />
+      }
     />
   );
 };

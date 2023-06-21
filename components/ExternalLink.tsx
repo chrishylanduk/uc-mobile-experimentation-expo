@@ -1,9 +1,12 @@
 import { Link } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
-import React from "react";
+import React, { type ReactElement } from "react";
 import { Platform } from "react-native";
+import PropTypes from "prop-types";
 
-export function ExternalLink(props: React.ComponentProps<typeof Link>) {
+export function ExternalLink(
+  props: React.ComponentProps<typeof Link>
+): ReactElement {
   return (
     <Link
       hrefAttrs={{
@@ -16,9 +19,13 @@ export function ExternalLink(props: React.ComponentProps<typeof Link>) {
           // Prevent the default behavior of linking to the default browser on native.
           e.preventDefault();
           // Open the link in an in-app browser.
-          WebBrowser.openBrowserAsync(props.href as string);
+          void WebBrowser.openBrowserAsync(props.href as string);
         }
       }}
     />
   );
 }
+
+ExternalLink.propTypes = {
+  href: PropTypes.string.isRequired,
+};

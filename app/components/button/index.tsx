@@ -1,8 +1,9 @@
 import { Pressable, Text } from "react-native";
 import { Shadow } from "react-native-shadow-2";
-import { buttonPropType } from "./types";
-import { FC } from "react";
+import { type buttonPropType } from "./types";
+import { type FC } from "react";
 import styles from "./styles";
+import React from "react";
 
 const GovukButton: FC<buttonPropType> = (props) => {
   return (

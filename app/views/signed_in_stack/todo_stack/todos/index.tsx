@@ -1,7 +1,9 @@
 import { Animated, StyleSheet, View, Image } from "react-native";
 import ScrollView = Animated.ScrollView;
+import { type ReactElement } from "react";
+import React from "react";
 
-const TodoPage = () => {
+const TodoPage = (): ReactElement => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
