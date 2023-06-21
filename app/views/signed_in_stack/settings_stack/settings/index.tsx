@@ -8,10 +8,8 @@ import {
 } from "react-native";
 import React from "react";
 import ScrollView = Animated.ScrollView;
-import { PushNotificationTokenContext } from "../../../Context";
 
 const SettingsPage = () => {
-  const token = React.useContext(PushNotificationTokenContext);
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -20,7 +18,6 @@ const SettingsPage = () => {
           source={require("../../../../../assets/images/settingsScreenshot.png")}
         />
         <Pressable style={{ height: 800 }}></Pressable>
-        <Text selectable={true}>{token}</Text>
       </View>
     </ScrollView>
   );
