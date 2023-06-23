@@ -11,6 +11,12 @@ import { type PageType } from "./app/views/types/ContextTypes";
 import SignInLoadingSection from "./app/views/signed_in_stack";
 import OneSignal from "react-native-onesignal";
 import Constants from "expo-constants";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+
+library.add(fas, far, fab);
 
 function App(): ReactElement {
   const [userId, setUserId] = React.useState<string>("");
