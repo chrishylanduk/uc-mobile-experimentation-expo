@@ -1,13 +1,14 @@
 import GovukButton from "../../../../components/button";
 import { navigate } from "../../../../navigation/RootNavigation";
 import Page from "../../../../components/page";
-import * as React from "react";
-import { type ReactElement } from "react";
+import React, { type ReactElement } from "react";
 import GovukH1 from "../../../../components/text/heading/h1";
 import GovukH2 from "../../../../components/text/heading/h2";
 import GovukH3 from "../../../../components/text/heading/h3";
 import Warning from "../../../../components/warning";
 import Body from "../../../../components/text/body";
+import Inset from "../../../../components/inset";
+import GovukText from "../../../../components/text/text";
 
 const ClaimantHomePage = (): ReactElement | null => {
   return (
@@ -26,6 +27,7 @@ const ClaimantHomePage = (): ReactElement | null => {
             navigate("SignIn", { screen: "Todo", params: { screen: "Home" } });
           }}
         />,
+        <Inset content={<GovukText text={"inset text"} />} key={8} />,
       ]}
     />
   );

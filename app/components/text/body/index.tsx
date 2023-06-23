@@ -4,8 +4,12 @@ import styles from "./styles";
 import { type textPropType } from "../types";
 import { commonText } from "../styles";
 
-const GovukH1: FC<textPropType> = (props) => {
-  return <Text style={[commonText.text, styles.body]}>{props.text}</Text>;
+const Body: FC<textPropType> = (props) => {
+  return (
+    <Text style={[commonText.text, commonText.commonText, styles.body]}>
+      {props.text}
+    </Text>
+  );
 };
 
-export default GovukH1;
+export default Body;

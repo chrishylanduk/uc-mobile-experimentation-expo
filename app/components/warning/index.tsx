@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 const Warning: FC<warningPropType> = (props) => {
   return (
-    <View style={warning.container}>
+    <View style={warning.warningContainer}>
       <FontAwesomeIcon
         icon={props.icon != null ? props.icon : "circle-exclamation"}
         style={warning.icon}

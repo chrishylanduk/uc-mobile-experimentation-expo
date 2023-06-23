@@ -11,10 +11,8 @@ export const warning = StyleSheet.create({
     minWidth: 35,
     minHeight: 35,
     marginTop: 8,
-    fontWeight: "700",
-    fontSize: 30,
   },
-  container: {
+  warningContainer: {
     marginBottom: 20,
     paddingTop: 10,
     paddingBottom: 10,
