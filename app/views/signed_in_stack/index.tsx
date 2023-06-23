@@ -1,4 +1,4 @@
-import React, { type ReactElement, useContext } from "react";
+import React, { type ReactElement, useContext, useEffect } from "react";
 import { PageContext } from "../Context";
 import { navigate } from "../../navigation/RootNavigation";
 import { View } from "react-native";
@@ -8,9 +8,11 @@ const SignInLoadingSection = (): ReactElement => {
 
   navigate("SignIn", { screen: page.page, params: { screen: page.subpage } });
 
-  if (page.override) {
-    setPage({ page: "Home", subpage: "Home Page", override: false });
-  }
+  useEffect(() => {
+    if (page.override) {
+      setPage({ page: "Home", subpage: "Home Page", override: false });
+    }
+  })
 
   return <View />;
 };
