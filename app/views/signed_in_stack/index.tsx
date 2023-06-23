@@ -12,7 +12,7 @@ const SignInLoadingSection = (): ReactElement => {
     if (page.override) {
       setPage({ page: "Home", subpage: "Home Page", override: false });
     }
-  })
+  });
 
   return <View />;
 };
