@@ -8,10 +8,12 @@ const GovukText: FC<textPropType> = (props) => {
   const style: StyleProp<TextStyle> = [
     commonText.text,
     commonText.commonText,
-    props.colour != null ? { color: props.colour } : { color: GOVUK_TEXT_COLOUR },
+    props.colour != null
+      ? { color: props.colour }
+      : { color: GOVUK_TEXT_COLOUR },
   ];
 
-  style.push((props.additionalStyle != null) ? props.additionalStyle : []);
+  style.push(props.additionalStyle != null ? props.additionalStyle : []);
 
   return <Text style={style}>{props.text}</Text>;
 };

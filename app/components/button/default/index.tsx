@@ -12,7 +12,8 @@ import {
 } from "../../constants/colours";
 
 const GovukButton: FC<buttonPropType> = (props) => {
-  const additionalStyles = (props.additionalStyle != null) ? props.additionalStyle : [];
+  const additionalStyles =
+    props.additionalStyle != null ? props.additionalStyle : [];
 
   return (
     <Shadow
@@ -36,9 +37,10 @@ const GovukButton: FC<buttonPropType> = (props) => {
             styles.buttonCommon,
             {
               alignItems: props.left != null ? "baseline" : "center",
-              backgroundColor: props.backgroundColour != null
-                ? props.backgroundColour
-                : GOVUK_SUCCESS_COLOUR,
+              backgroundColor:
+                props.backgroundColour != null
+                  ? props.backgroundColour
+                  : GOVUK_SUCCESS_COLOUR,
               borderColor: pressed
                 ? props.pressedColour != null
                   ? props.pressedColour
@@ -50,7 +52,9 @@ const GovukButton: FC<buttonPropType> = (props) => {
       >
         <GovukText
           text={props.text}
-          colour={props.textColour != null ? props.textColour : govuk_colour.white}
+          colour={
+            props.textColour != null ? props.textColour : govuk_colour.white
+          }
         />
       </Pressable>
     </Shadow>
