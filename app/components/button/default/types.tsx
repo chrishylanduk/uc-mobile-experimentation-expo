@@ -1,4 +1,4 @@
-import { StyleProp, TextStyle } from "react-native";
+import { type StyleProp, type TextStyle } from "react-native";
 
 export type buttonPropType = {
   text: string;
@@ -8,5 +8,5 @@ export type buttonPropType = {
   pressedColour?: string;
   textColour?: string;
   left?: boolean;
-  additionalStyle?: StyleProp<TextStyle>[];
+  additionalStyle?: Array<StyleProp<TextStyle>>;
 };

@@ -1,8 +1,8 @@
 // Text
-export const govuk_bold = "700";
-export const govuk_weight = "400";
-export const govuk_font_size_xs = 16;
-export const govuk_font_size_s = 19;
-export const govuk_font_size_m = 24;
-export const govuk_font_size_l = 36;
-export const govuk_font_size_xl = 48;
+export const GOVUK_BOLD = "700";
+export const GOVUK_WEIGHT = "400";
+export const GOVUK_FONT_SIZE_XS = 16;
+export const GOVUK_FONT_SIZE_S = 19;
+export const GOVUK_FONT_SIZE_M = 24;
+export const GOVUK_FONT_SIZE_L = 36;
+export const GOVUK_FONT_SIZE_XL = 48;

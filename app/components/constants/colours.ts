@@ -1,29 +1,29 @@
 // Text
-export const govuk_text_colour = "#0b0c0c";
-export const govuk_secondary_text_colour = "#505a5f";
+export const GOVUK_TEXT_COLOUR = "#0b0c0c";
+export const GOVUK_SECONDARY_TEXT_COLOUR = "#505a5f";
 
 // Links
-export const govuk_link_colour = "#1d70b8";
-export const govuk_link_hover_colour = "#003078";
-export const govuk_link_visited_colour = "#4c2c92";
-export const govuk_link_active_colour = "#0b0c0c";
+export const GOVUK_LINK_COLOUR = "#1d70b8";
+export const GOVUK_LINK_HOVER_COLOUR = "#003078";
+export const GOVUK_LINK_VISITED_COLOUR = "#4c2c92";
+export const GOVUK_LINK_ACTIVE_COLOUR = "#0b0c0c";
 
 // Border
-export const govuk_border_colour = "#b1b4b6";
-export const govuk_input_border_colour = "#0b0c0c";
+export const GOVUK_BORDER_COLOUR = "#b1b4b6";
+export const GOVUK_INPUT_BORDER_COLOUR = "#0b0c0c";
 
 // Focus state
-export const govuk_focus_colour = "#ffdd00";
-export const govuk_focus_text_colour = "#0b0c0c";
+export const GOVUK_FOCUS_COLOUR = "#ffdd00";
+export const GOVUK_FOCUS_TEXT_COLOUR = "#0b0c0c";
 
 // Error state
-export const govuk_error_colour = "#d4351c";
+export const GOVUK_ERROR_COLOUR = "#d4351c";
 
 // Success state
-export const govuk_success_colour = "#00703c";
+export const GOVUK_SUCCESS_COLOUR = "#00703c";
 
-// Brand colour
-export const govuk_brand_colour = "#1d70b8";
+// Brand COLOUR
+export const GOVUK_BRAND_COLOUR = "#1d70b8";
 
 // Colour palette
 export enum govuk_colour {

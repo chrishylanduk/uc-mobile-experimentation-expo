@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import { govuk_font_size_m } from "../../../constants/styles";
+import { GOVUK_FONT_SIZE_M } from "../../../constants/styles";
 
 const styles = StyleSheet.create({
   h3: {
-    fontSize: govuk_font_size_m,
+    fontSize: GOVUK_FONT_SIZE_M,
     paddingTop: 10,
     marginBottom: 20,
     maxWidth: 480,

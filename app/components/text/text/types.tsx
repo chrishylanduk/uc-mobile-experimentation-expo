@@ -1,7 +1,7 @@
-import { StyleProp, TextStyle } from "react-native";
+import { type StyleProp, type TextStyle } from "react-native";
 
 export type textPropType = {
   text: string;
   colour?: string;
-  additionalStyle?: StyleProp<TextStyle>[];
+  additionalStyle?: Array<StyleProp<TextStyle>>;
 };

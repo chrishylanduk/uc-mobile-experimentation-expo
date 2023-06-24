@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { govuk_border_colour } from "../constants/colours";
+import { GOVUK_BORDER_COLOUR } from "../constants/colours";
 
 const styles = StyleSheet.create({
   inset: {
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     borderLeftWidth: 10,
-    borderLeftColor: govuk_border_colour,
+    borderLeftColor: GOVUK_BORDER_COLOUR,
     borderStyle: "solid",
   },
 });

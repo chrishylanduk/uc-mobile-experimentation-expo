@@ -2,7 +2,7 @@ import React, { type FC } from "react";
 import styles from "./styles";
 import { headerText } from "../styles";
 import GovukText from "../../text";
-import { nonDefaultTextPropType } from "../../types";
+import { type nonDefaultTextPropType } from "../../types";
 
 const GovukH2: FC<nonDefaultTextPropType> = (props) => {
   return (

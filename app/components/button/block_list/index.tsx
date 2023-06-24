@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import { govuk_colour, govuk_link_colour } from "../../constants/colours";
+import React, { type FC } from "react";
+import { govuk_colour, GOVUK_LINK_COLOUR } from "../../constants/colours";
 import GovukButton from "../default";
-import { nonDefaultPropType } from "../types";
+import { type nonDefaultPropType } from "../types";
 
 const BlockList: FC<nonDefaultPropType> = (props) => {
   return (
@@ -10,7 +10,7 @@ const BlockList: FC<nonDefaultPropType> = (props) => {
       onPress={props.onPress}
       backgroundColour={govuk_colour.light_grey}
       shadowColour={govuk_colour.mid_grey}
-      textColour={govuk_link_colour}
+      textColour={GOVUK_LINK_COLOUR}
       left={true}
     />
   );

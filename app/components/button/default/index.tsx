@@ -7,18 +7,18 @@ import React from "react";
 import GovukText from "../../text/text";
 import {
   govuk_colour,
-  govuk_focus_colour,
-  govuk_success_colour,
+  GOVUK_FOCUS_COLOUR,
+  GOVUK_SUCCESS_COLOUR,
 } from "../../constants/colours";
 
 const GovukButton: FC<buttonPropType> = (props) => {
-  let additionalStyles = props.additionalStyle ? props.additionalStyle : [];
+  const additionalStyles = (props.additionalStyle != null) ? props.additionalStyle : [];
 
   return (
     <Shadow
       distance={2}
-      startColor={props.shadowColour ? props.shadowColour : "#002d18"}
-      endColor={props.shadowColour ? props.shadowColour : "#002d18"}
+      startColor={props.shadowColour != null ? props.shadowColour : "#002d18"}
+      endColor={props.shadowColour != null ? props.shadowColour : "#002d18"}
       sides={{ top: false, start: false, end: false, bottom: true }}
       corners={{
         topStart: false,
@@ -35,14 +35,14 @@ const GovukButton: FC<buttonPropType> = (props) => {
           additionalStyles.concat([
             styles.buttonCommon,
             {
-              alignItems: props.left ? "baseline" : "center",
-              backgroundColor: props.backgroundColour
+              alignItems: props.left != null ? "baseline" : "center",
+              backgroundColor: props.backgroundColour != null
                 ? props.backgroundColour
-                : govuk_success_colour,
+                : GOVUK_SUCCESS_COLOUR,
               borderColor: pressed
-                ? props.pressedColour
+                ? props.pressedColour != null
                   ? props.pressedColour
-                  : govuk_focus_colour
+                  : GOVUK_FOCUS_COLOUR
                 : "rgba(0, 0, 0, 0)",
             },
           ])
@@ -50,7 +50,7 @@ const GovukButton: FC<buttonPropType> = (props) => {
       >
         <GovukText
           text={props.text}
-          colour={props.textColour ? props.textColour : govuk_colour.white}
+          colour={props.textColour != null ? props.textColour : govuk_colour.white}
         />
       </Pressable>
     </Shadow>
