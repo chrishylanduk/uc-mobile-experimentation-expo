@@ -1,14 +1,8 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  text: {
-    fontWeight: "400",
-    fontSize: 16,
-    color: "white",
-  },
   buttonContainer: {
     marginBottom: 22,
-    alignItems: "center",
     maxWidth: "100%",
   },
   buttonCommon: {
@@ -20,14 +14,6 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     borderWidth: 3,
     borderStyle: "solid",
-    backgroundColor: "#00703c",
-    alignItems: "center",
-  },
-  wrapperCustom: {
-    borderColor: "rgba(0, 0, 0, 0)",
-  },
-  pressedDown: {
-    borderColor: "#fd0",
   },
 });
 

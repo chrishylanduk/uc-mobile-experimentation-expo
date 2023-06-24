@@ -1,15 +1,15 @@
 import React, { type FC } from "react";
-import { Text } from "react-native";
-import { type textPropType } from "../../types";
 import styles from "./styles";
-import { commonText } from "../../styles";
 import { headerText } from "../styles";
+import GovukText from "../../text";
+import { nonDefaultTextPropType } from "../../types";
 
-const GovukH2: FC<textPropType> = (props) => {
+const GovukH2: FC<nonDefaultTextPropType> = (props) => {
   return (
-    <Text style={[commonText.text, headerText.header, styles.h2]}>
-      {props.text}
-    </Text>
+    <GovukText
+      text={props.text}
+      additionalStyle={[headerText.header, styles.h2]}
+    />
   );
 };
 

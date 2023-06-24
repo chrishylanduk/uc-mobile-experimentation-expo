@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
+import { govuk_bold, govuk_font_size_s } from "../constants/styles";
 
 export const warning = StyleSheet.create({
   text: {
-    fontWeight: "700",
+    fontWeight: govuk_bold,
     paddingLeft: 45,
-    fontSize: 19,
+    fontSize: govuk_font_size_s,
   },
   icon: {
     position: "absolute",

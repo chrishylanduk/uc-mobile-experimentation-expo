@@ -1,10 +1,9 @@
 import React, { type FC } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { type warningPropType } from "./types";
-import { commonText } from "../text/styles";
-import { headerText } from "../text/heading/styles";
 import { warning } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import GovukText from "../text/text";
 
 const Warning: FC<warningPropType> = (props) => {
   return (
@@ -13,9 +12,7 @@ const Warning: FC<warningPropType> = (props) => {
         icon={props.icon != null ? props.icon : "circle-exclamation"}
         style={warning.icon}
       />
-      <Text style={[commonText.text, headerText.header, warning.text]}>
-        {props.text}
-      </Text>
+      <GovukText text={props.text} additionalStyle={[warning.text]} />
     </View>
   );
 };

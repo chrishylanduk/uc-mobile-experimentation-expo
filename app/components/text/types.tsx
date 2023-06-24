@@ -1,3 +1,3 @@
-export type textPropType = {
+export type nonDefaultTextPropType = {
   text: string;
 };
