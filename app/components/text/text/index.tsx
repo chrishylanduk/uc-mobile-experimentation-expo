@@ -2,9 +2,7 @@ import React, { type FC } from "react";
 import { StyleProp, Text, TextStyle } from "react-native";
 import { type textPropType } from "./types";
 import { commonText } from "../styles";
-import {
-  govuk_text_colour,
-} from "../../constants/colours";
+import { govuk_text_colour } from "../../constants/colours";
 
 const GovukText: FC<textPropType> = (props) => {
   let style: StyleProp<TextStyle> = [
