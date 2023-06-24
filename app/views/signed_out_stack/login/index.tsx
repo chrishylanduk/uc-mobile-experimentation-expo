@@ -3,7 +3,7 @@ import { UserIdContext } from "../../Context";
 import * as React from "react";
 import authenticate from "../../../utilities/login/authenticate";
 import login from "../../../utilities/login/login";
-import GovukButton from "../../../components/button";
+import GovukButton from "../../../components/button/default";
 import Page from "../../../components/page";
 
 const LoginPage = (): ReactElement => {

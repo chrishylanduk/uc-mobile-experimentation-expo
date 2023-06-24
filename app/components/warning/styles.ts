@@ -1,20 +1,19 @@
 import { StyleSheet } from "react-native";
+import { GOVUK_BOLD, GOVUK_FONT_SIZE_S } from "../constants/styles";
 
 export const warning = StyleSheet.create({
   text: {
-    fontWeight: "700",
+    fontWeight: GOVUK_BOLD,
     paddingLeft: 45,
-    fontSize: 19,
+    fontSize: GOVUK_FONT_SIZE_S,
   },
   icon: {
     position: "absolute",
     minWidth: 35,
     minHeight: 35,
     marginTop: 8,
-    fontWeight: "700",
-    fontSize: 30,
   },
-  container: {
+  warningContainer: {
     marginBottom: 20,
     paddingTop: 10,
     paddingBottom: 10,

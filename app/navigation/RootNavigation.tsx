@@ -19,6 +19,7 @@ export function navigate(
     navigationRef.dispatch(CommonActions.navigate(name, params));
   }
 }
+
 //
 // export function RootNavigation(){
 //     const TopLevel = createNativeStackNavigator<RootStackParamList>();

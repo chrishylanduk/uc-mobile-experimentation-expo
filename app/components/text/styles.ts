@@ -1,8 +1,12 @@
 import { StyleSheet } from "react-native";
+import { GOVUK_FONT_SIZE_XS, GOVUK_WEIGHT } from "../constants/styles";
 
 export const commonText = StyleSheet.create({
   text: {
     fontFamily: "sans-serif",
-    color: "#0b0c0c",
+  },
+  commonText: {
+    fontSize: GOVUK_FONT_SIZE_XS,
+    fontWeight: GOVUK_WEIGHT,
   },
 });

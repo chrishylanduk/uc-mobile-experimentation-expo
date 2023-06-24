@@ -1,7 +1,8 @@
 import { StyleSheet } from "react-native";
+import { GOVUK_BOLD } from "../../constants/styles";
 
 export const headerText = StyleSheet.create({
   header: {
-    fontWeight: "700",
+    fontWeight: GOVUK_BOLD,
   },
 });
