@@ -1,6 +1,7 @@
 import { Row } from "react-native-reanimated-table";
 import { type FC } from "react";
-import { govukHeadRowType } from "./types";
+import React from "react";
+import type { govukHeadRowType } from "./types";
 import { govukHeadRowStyle } from "./styles";
 
 const GovukHeadRow: FC<govukHeadRowType> = (props) => {

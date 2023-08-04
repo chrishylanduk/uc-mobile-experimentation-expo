@@ -1,19 +1,9 @@
-import GovukButton from "../../../../components/button/default";
-import { navigate } from "../../../../navigation/RootNavigation";
 import Page from "../../../../components/page";
 import React, { type ReactElement } from "react";
-import GovukH1 from "../../../../components/text/heading/h1";
 import GovukH2 from "../../../../components/text/heading/h2";
 import GovukH3 from "../../../../components/text/heading/h3";
-import Warning from "../../../../components/warning";
-import Body from "../../../../components/text/body";
 import Inset from "../../../../components/inset";
 import GovukText from "../../../../components/text/text";
-import BlockList from "../../../../components/button/block_list";
-import GovukTable from "../../../../components/table/table";
-import GovukRows from "../../../../components/table/rows";
-import GovukHeadRow from "../../../../components/table/headRow";
-import { GOVUK_WEIGHT } from "../../../../components/constants/styles";
 
 const ClaimantHomePage = (): ReactElement | null => {
   return (

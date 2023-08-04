@@ -1,4 +1,3 @@
-import { ScrollView, StyleSheet, View, Image } from "react-native";
 import React, { type ReactElement } from "react";
 import Page from "../../../../components/page";
 import BlockList from "../../../../components/button/block_list";

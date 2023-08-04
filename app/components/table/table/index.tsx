@@ -1,7 +1,8 @@
 import { Table } from "react-native-reanimated-table";
 import { type FC } from "react";
-import { govukTableType } from "./types";
+import type { govukTableType } from "./types";
 import { govukTableStyle } from "./styles";
+import React from "react";
 
 const GovukTable: FC<govukTableType> = (props) => {
   const combinedStyle = [govukTableStyle.style, props.style];

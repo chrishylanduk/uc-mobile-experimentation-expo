@@ -1,3 +1,3 @@
-import { Row } from "react-native-reanimated-table";
+import type { Row } from "react-native-reanimated-table";
 
-export type govukHeadRowType = React.ComponentProps<typeof Row> & {};
+export type govukHeadRowType = React.ComponentProps<typeof Row>;

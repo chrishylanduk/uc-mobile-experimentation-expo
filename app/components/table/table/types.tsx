@@ -1,3 +1,3 @@
-import { Table } from "react-native-reanimated-table";
+import type { Table } from "react-native-reanimated-table";
 
-export type govukTableType = React.ComponentProps<typeof Table> & {};
+export type govukTableType = React.ComponentProps<typeof Table>;

@@ -1,6 +1,4 @@
-import { Animated, Pressable, StyleSheet, View, Image } from "react-native";
 import React, { type ReactElement } from "react";
-import ScrollView = Animated.ScrollView;
 import Page from "../../../../components/page";
 import GovukH2 from "../../../../components/text/heading/h2";
 import BlockList from "../../../../components/button/block_list";

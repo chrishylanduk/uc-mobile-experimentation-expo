@@ -1,7 +1,8 @@
 import { Rows } from "react-native-reanimated-table";
 import { type FC } from "react";
-import { govukRowsType } from "./types";
+import type { govukRowsType } from "./types";
 import { govukRowsStyle } from "./styles";
+import React from "react";
 
 const GovukRows: FC<govukRowsType> = (props) => {
   const combinedTextStyle = [govukRowsStyle.text, props.textStyle];
