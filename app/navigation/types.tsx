@@ -8,9 +8,11 @@ export type RootNavigationType = {
 
 export type SignedInStackType = {
   Home: NavigatorScreenParams<HomeStackType>;
-  Todo: NavigatorScreenParams<TodoStackType>;
-  Journals: NavigatorScreenParams<JournalStackType>;
+  "To-dos": NavigatorScreenParams<TodoStackType>;
+  Messages: NavigatorScreenParams<MessagesStackType>;
   Settings: NavigatorScreenParams<SettingsStackType>;
+  Offers: NavigatorScreenParams<OffersStackType>;
+  You: NavigatorScreenParams<YouStackType>;
 };
 
 export type SignedOutStackType = {
@@ -22,12 +24,21 @@ export type HomeStackType = {
   "Home Page": undefined;
 };
 
-export type JournalStackType = {
-  "Journal Page": undefined;
+export type MessagesStackType = {
+  "Messages Page": undefined;
 };
 
 export type SettingsStackType = {
   "Settings Page": undefined;
+};
+
+export type OffersStackType = {
+  "Offers Page": undefined;
+};
+
+export type YouStackType = {
+  "You Page": undefined;
+  Settings: undefined;
 };
 
 export type TodoStackType = {

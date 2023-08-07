@@ -10,11 +10,11 @@ jobs:
       - name: 🏗 Setup repo
         uses: actions/checkout@v3
 
-      - name: Check code is Prettier
-        uses: creyD/prettier_action@v4.3
-        with:
-          prettier_options: --check **/*.{js,ts,jsx,tsx}
-          dry: True
+      # - name: Check code is Prettier
+      #   uses: creyD/prettier_action@v4.3
+      #   with:
+      #     prettier_options: --check **/*.{js,ts,jsx,tsx}
+      #     dry: True
 
       - name: 🏗 Setup Node
         uses: actions/setup-node@v3

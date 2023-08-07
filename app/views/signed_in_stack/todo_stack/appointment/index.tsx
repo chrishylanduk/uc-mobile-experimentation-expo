@@ -10,22 +10,6 @@ const AppointmentPage = (): ReactElement => {
           style={styles.image}
           source={require("../../../../../assets/images/appointmentScreenshot.jpg")}
         />
-        {/* <Page> */}
-        {/*    <GovukH1>Welcome John!</GovukH1> */}
-        {/*    <GovukText>32 years old, partner of Jane Doe</GovukText> */}
-
-        {/*    <GovukH2>Payments</GovukH2> */}
-        {/*    <GovukInset> */}
-        {/*        <GovukText>Your next payment will be</GovukText> */}
-        {/*        <GovukH2>£1,432</GovukH2> */}
-        {/*    </GovukInset> */}
-
-        {/*    <GovukButton> */}
-        {/*        <GovukButtonText> */}
-        {/*            Go to payments */}
-        {/*        </GovukButtonText> */}
-        {/*    </GovukButton> */}
-        {/* </Page> */}
       </View>
     </ScrollView>
   );
