@@ -14,7 +14,7 @@ import GovukText from "../../../../components/text/text";
 import Warning from "../../../../components/warning";
 import { navigate } from "../../../../navigation/RootNavigation";
 
-const JournalPage = (): ReactElement => {
+const MessagesPage = (): ReactElement => {
   return (
     <Page
       content={[
@@ -55,4 +55,4 @@ const JournalPage = (): ReactElement => {
   );
 };
 
-export default JournalPage;
+export default MessagesPage;

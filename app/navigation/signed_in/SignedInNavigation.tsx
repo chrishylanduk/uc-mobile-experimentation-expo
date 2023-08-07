@@ -1,14 +1,18 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TodoSection from "./todo/TodoNavigation";
-import SettingsSection from "./settings/SettingsNavigation";
 import HomeSection from "./home/HomeNavigation";
-import JournalSection from "./journal/JournalNavigation";
+import MessagesSection from "./messages/MessagesNavigation";
 import LogoTitle from "../../components/logo_title";
 import { type SignedInStackType } from "../types";
 import { type ReactElement } from "react";
 import { type IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import OffersSection from "./offers/OffersNavigation";
+import YouSection from "./you/YouNavigation";
+import { Pressable } from "react-native";
+import { navigate } from "../RootNavigation";
+import SettingsSection from "./settings/SettingsNavigation";
 
 function SignedInSection(): ReactElement {
   const SignedInStack = createBottomTabNavigator<SignedInStackType>();
@@ -26,12 +30,20 @@ function SignedInSection(): ReactElement {
               icon = "home";
               break;
             }
-            case "Todo": {
+            case "To-dos": {
               icon = "clipboard";
               break;
             }
-            case "Journals": {
-              icon = "book";
+            case "Messages": {
+              icon = "comment";
+              break;
+            }
+            case "Offers": {
+              icon = "shopping-basket";
+              break;
+            }
+            case "You": {
+              icon = "user";
               break;
             }
             default: {
@@ -52,12 +64,36 @@ function SignedInSection(): ReactElement {
         tabBarInactiveTintColor: "gray",
         // @ts-expect-error Temporary
         headerTitle: (props) => <LogoTitle {...props} />,
+        headerRight: () => (
+          <Pressable
+            style={{ paddingRight: 12 }}
+            onPress={() => {
+              navigate("SignIn", {
+                screen: "Settings",
+              });
+            }}
+          >
+            <FontAwesomeIcon
+              icon={"cog"}
+              size={25}
+              color={route.name === "Settings" ? "#1d70b8" : "gray"}
+            />
+          </Pressable>
+        ),
       })}
     >
       <SignedInStack.Screen name="Home" component={HomeSection} />
-      <SignedInStack.Screen name="Todo" component={TodoSection} />
-      <SignedInStack.Screen name="Journals" component={JournalSection} />
-      <SignedInStack.Screen name="Settings" component={SettingsSection} />
+      <SignedInStack.Screen name="Messages" component={MessagesSection} />
+      <SignedInStack.Screen name="To-dos" component={TodoSection} />
+      <SignedInStack.Screen name="Offers" component={OffersSection} />
+      <SignedInStack.Screen name="You" component={YouSection} />
+      <SignedInStack.Screen
+        name="Settings"
+        component={SettingsSection}
+        options={{
+          tabBarButton: () => null,
+        }}
+      />
     </SignedInStack.Navigator>
   );
 }

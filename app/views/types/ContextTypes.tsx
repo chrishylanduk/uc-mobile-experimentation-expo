@@ -1,7 +1,7 @@
 import { type Dispatch, type SetStateAction } from "react";
 import {
   type HomeStackType,
-  type JournalStackType,
+  type MessagesStackType,
   type SettingsStackType,
   type SignedInStackType,
   type TodoStackType,
@@ -16,7 +16,7 @@ export type PageType = {
   page: keyof SignedInStackType;
   subpage:
     | keyof HomeStackType
-    | keyof JournalStackType
+    | keyof MessagesStackType
     | keyof SettingsStackType
     | keyof TodoStackType;
   override: boolean;

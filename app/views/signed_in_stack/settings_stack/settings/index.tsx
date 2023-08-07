@@ -20,7 +20,7 @@ const SettingsPage = (): ReactElement => {
           key={2}
         />,
         <BlockList
-          text={"Accessbility"}
+          text={"Accessibility"}
           onPress={() => {
             navigate("SignIn", {
               screen: "Home",
