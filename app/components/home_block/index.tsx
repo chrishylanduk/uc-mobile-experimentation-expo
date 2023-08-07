@@ -10,10 +10,10 @@ import LinkText from "../text/link";
 
 const HomeBlock: FC<backgroundPropType> = (props) => {
   return <View style={background.background}>
-    <GovukH3 text={props.title}/>
-    {props.content.map((item) => {
+    <GovukH3 text={props.title} key={0}/>
+    {props.content.map((item, i) => {
       return (
-        <Pressable style={itemStyle.itemContainer } onPress={item.onPress}>
+        <Pressable style={itemStyle.itemContainer } onPress={item.onPress} key={i+2}>
           <FontAwesomeIcon
             icon={item.icon}
             style={itemStyle.icon}
@@ -33,6 +33,7 @@ const HomeBlock: FC<backgroundPropType> = (props) => {
     {props.linkText !== undefined ? 
       <Pressable
         onPress={props.onPress}
+        key={1}
       >
         <LinkText text={props.linkText}/>
       </Pressable>

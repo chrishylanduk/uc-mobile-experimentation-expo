@@ -1,9 +1,6 @@
 import Page from "../../../../components/page";
 import React, { type ReactElement } from "react";
 import GovukH2 from "../../../../components/text/heading/h2";
-import GovukH3 from "../../../../components/text/heading/h3";
-import Inset from "../../../../components/inset";
-import GovukText from "../../../../components/text/text";
 import HomeBlock from "../../../../components/home_block";
 import { navigate } from "../../../../navigation/RootNavigation";
 
