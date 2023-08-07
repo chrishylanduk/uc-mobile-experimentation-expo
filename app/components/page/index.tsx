@@ -10,7 +10,16 @@ const Page: FC<pagePropType> = (props) => {
       <View
         style={{ flex: 1, alignItems: "center", justifyContent: "flex-start" }}
       >
-        <View style={{ width: "80%", maxWidth: 500, minWidth: 300 }}>{props.content}</View>
+        <View
+          style={{
+            width: "94%",
+            maxWidth: 500,
+            minWidth: 300,
+            marginBottom: 14,
+          }}
+        >
+          {props.content}
+        </View>
       </View>
     </ScrollView>
   );

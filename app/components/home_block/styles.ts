@@ -4,37 +4,46 @@ import { GOVUK_FONT_SIZE_XS, GOVUK_WEIGHT } from "../constants/styles";
 
 export const background = StyleSheet.create({
   background: {
-    padding: 15,
-    marginTop: 20,
-    marginBottom: 20,
-    backgroundColor: govuk_colour.light_grey,
-    },
+    marginBottom: 8,
+  },
 });
 
 export const itemStyle = StyleSheet.create({
   text: {
     fontWeight: GOVUK_WEIGHT,
-    paddingLeft: 10,
+    paddingLeft: 15,
     paddingRight: 10,
     fontSize: GOVUK_FONT_SIZE_XS,
     flexGrow: 1,
     flexShrink: 1,
-    flexBasis: 'auto',
+    flexBasis: "auto",
   },
   icon: {
-    minHeight: 35,
+    minHeight: 28,
     flexGrow: 0,
     flexShrink: 0,
-    flexBasis: 35,
+    flexBasis: 28,
+    color: govuk_colour.dark_grey,
+  },
+  chevron: {
+    minHeight: 15,
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: 15,
   },
   itemContainer: {
     alignItems: "center",
     textAlignVertical: "center",
-    marginBottom: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    marginBottom: 10,
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 15,
+    paddingRight: 15,
     position: "relative",
     marginTop: -5,
-    flexDirection: 'row',
+    flexDirection: "row",
+    backgroundColor: govuk_colour.light_grey,
+    borderBottomWidth: 1,
+    borderBottomColor: govuk_colour.mid_grey,
   },
 });
