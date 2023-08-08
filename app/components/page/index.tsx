@@ -1,9 +1,8 @@
 import { type FC } from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, Dimensions } from "react-native";
 import { type pagePropType } from "./types";
 import styles from "./styles";
 import React from "react";
-import {Dimensions} from 'react-native';
 
 const Page: FC<pagePropType> = (props) => {
   return (

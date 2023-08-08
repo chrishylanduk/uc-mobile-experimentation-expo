@@ -52,7 +52,7 @@ const GovukButton: FC<buttonPropType> = (props) => {
         }
         key={0}
       >
-        {typeof props.content == 'string'
+        {typeof props.content === 'string'
           ? 
           <GovukText
             text={props.content}
