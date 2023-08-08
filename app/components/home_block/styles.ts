@@ -1,13 +1,9 @@
 import { StyleSheet } from "react-native";
-import { govuk_colour } from "../constants/colours";
 import { GOVUK_FONT_SIZE_XS, GOVUK_WEIGHT } from "../constants/styles";
 
 export const background = StyleSheet.create({
   background: {
-    padding: 15,
-    marginTop: 20,
-    marginBottom: 20,
-    backgroundColor: govuk_colour.light_grey,
+      marginBottom: 30,
     },
 });
 
@@ -29,12 +25,11 @@ export const itemStyle = StyleSheet.create({
   },
   itemContainer: {
     alignItems: "center",
-    textAlignVertical: "center",
-    marginBottom: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
     position: "relative",
     marginTop: -5,
     flexDirection: 'row',
+    width: "100%",
   },
 });

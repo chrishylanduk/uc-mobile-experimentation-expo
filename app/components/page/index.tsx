@@ -3,6 +3,7 @@ import { ScrollView, View } from "react-native";
 import { type pagePropType } from "./types";
 import styles from "./styles";
 import React from "react";
+import {Dimensions} from 'react-native';
 
 const Page: FC<pagePropType> = (props) => {
   return (
@@ -10,7 +11,7 @@ const Page: FC<pagePropType> = (props) => {
       <View
         style={{ flex: 1, alignItems: "center", justifyContent: "flex-start" }}
       >
-        <View style={{ width: "80%", maxWidth: 500, minWidth: 300 }}>{props.content}</View>
+        <View style={{ width: Dimensions.get('window').width < 400 ? "95%" : "80%", maxWidth: 500, minWidth: 300 }}>{props.content}</View>
       </View>
     </ScrollView>
   );

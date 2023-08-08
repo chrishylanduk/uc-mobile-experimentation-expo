@@ -6,12 +6,13 @@ import { type nonDefaultPropType } from "../types";
 const BlockList: FC<nonDefaultPropType> = (props) => {
   return (
     <GovukButton
-      text={props.text}
+      content={props.contents}
       onPress={props.onPress}
       backgroundColour={govuk_colour.light_grey}
       shadowColour={govuk_colour.mid_grey}
       textColour={GOVUK_LINK_COLOUR}
       left={true}
+      bottomMargin={10}
     />
   );
 };

@@ -17,7 +17,7 @@ const LoginPage = (): ReactElement => {
     <Page
       content={
         <GovukButton
-          text="Sign in"
+          content="Sign in"
           onPress={() => {
             login(setUserId);
           }}
