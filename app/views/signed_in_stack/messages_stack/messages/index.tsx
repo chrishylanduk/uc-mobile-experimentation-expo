@@ -1,54 +1,58 @@
 import React, { type ReactElement } from "react";
 import Page from "../../../../components/page";
-import BlockList from "../../../../components/button/block_list";
 import GovukButton from "../../../../components/button/default";
-import Inset from "../../../../components/inset";
 import GovukHeadRow from "../../../../components/table/headRow";
 import GovukRows from "../../../../components/table/rows";
 import GovukTable from "../../../../components/table/table";
-import Body from "../../../../components/text/body";
-import GovukH1 from "../../../../components/text/heading/h1";
-import GovukH2 from "../../../../components/text/heading/h2";
 import GovukH3 from "../../../../components/text/heading/h3";
 import GovukText from "../../../../components/text/text";
-import Warning from "../../../../components/warning";
 import { navigate } from "../../../../navigation/RootNavigation";
+import UL from "../../../../components/text/ul";
+import GovukH2 from "../../../../components/text/heading/h2";
+import LinkText from "../../../../components/text/link";
 
 const MessagesPage = (): ReactElement => {
   return (
     <Page
       content={[
-        <GovukH1 text="govukH1" key={1} />,
-        <GovukH2 text="govukH2" key={2} />,
-        <GovukH3 text="govukH3" key={3} />,
-        <Body text={"Body"} key={7} />,
-        <Warning text="Warning" key={5} />,
-        <Warning text="Other warning" icon="ban" key={6} />,
-        <GovukButton
-          key={4}
-          content="test"
+        <GovukH2 text="Journal" key={1} />,
+        <GovukText text="Use your journal to:" key={2}/>,
+        <UL content={[
+          <GovukText text="add details about your work search" key={1}/>,
+          <GovukText text="leave messages for Universal Credit" key={2}/>,
+          <GovukText text="view your Universal Credit account history" key={3}/>
+        ]} key={3}/>,
+        <GovukButton 
+          content="Add a journal entry" 
           onPress={() => {
-            navigate("SignIn", { screen: "Todo", params: { screen: "Home" } });
-          }}
+            navigate("SignIn", {
+              screen: "Home",
+              params: { screen: "Settings" },
+            });
+          }} key={4}
         />,
-        <Inset content={<GovukText text={"inset text"} />} key={8} />,
-        <BlockList
-          contents={"block"}
-          onPress={() => {
-            navigate("SignIn", { screen: "Todo", params: { screen: "Home" } });
-          }}
-          key={9}
-        />,
-        <GovukTable key={10}>
-          <GovukHeadRow data={["Head", "Head2", "Head3", "Head4"]} />
+        <GovukH3 text="Journal entries" key={5}/>,
+        <GovukTable key={6}>
+          <GovukHeadRow data={["Date and time", "Message", "Added by"]} flexArr={[20, 60, 20]} key={1}/>
           <GovukRows
+            flexArr={[20, 60, 20]}
             data={[
-              ["1", "2", "3", "4"],
-              ["a", "b", "c", "d"],
-              ["1", "2", "3", "456\n789"],
-              ["a", "b", "c", "d"],
+              ["6 Dec 2022 at 5:41pm", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas nisl nec elit tincidunt porta. Proin accumsan nulla nec tincidunt consequat. Morbi urna urna, dictum sit amet faucibus quis, tincidunt consequat ipsum. Nulla facilisi. Mauris sit amet erat fermentum mauris interdum vehicula. Proin orci magna, euismod ac gravida non, scelerisque sed tortor. Cras ullamcorper rhoncus elit, viverra suscipit arcu molestie ut.", "John Doe"],
+              ["5 Dec 2022 at 5:41pm", "In at molestie sapien. In hac habitasse platea dictumst. Etiam sed nibh eros. Duis accumsan libero sed odio aliquam, vitae gravida sapien faucibus. Nam quis interdum leo. Suspendisse quam magna, tincidunt vitae luctus quis, malesuada in eros. Vivamus et gravida ante. Praesent eget dolor vel lectus convallis porta a sit amet tellus. Nulla facilisi.", "Bob Bob"],
+              ["3 Dec 2022 at 5:41pm", "Caring for someone completed", "Annalise Smith"],
+              ["2 Dec 2022 at 5:41pm", 
+                <LinkText 
+                text="New claim details were submitted" 
+                onPress={() => {
+                  navigate("SignIn", {
+                    screen: "Home",
+                    params: { screen: "Settings" },
+                  })}}
+                key={1}/>, 
+                "Jane Doe"
+              ],
             ]}
-          />
+          key={2}/>
         </GovukTable>,
       ]}
     />

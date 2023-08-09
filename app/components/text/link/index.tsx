@@ -2,7 +2,9 @@ import React, { type FC } from "react";
 import { type StyleProp, Text, type TextStyle } from "react-native";
 import { type textPropType } from "./types";
 import { commonText } from "../styles";
-import { GOVUK_TEXT_COLOUR } from "../../constants/colours";
+import { GOVUK_LINK_COLOUR } from "../../constants/colours";
+import { Pressable } from "react-native";
+import { GOVUK_BOLD, GOVUK_WEIGHT } from "../../constants/styles";
 
 const LinkText: FC<textPropType> = (props) => {
   const style: StyleProp<TextStyle> = [
@@ -10,13 +12,23 @@ const LinkText: FC<textPropType> = (props) => {
     commonText.commonText,
     props.colour != null
       ? { color: props.colour }
-      : { color: GOVUK_TEXT_COLOUR },
+      : { color: GOVUK_LINK_COLOUR },
     {textDecorationLine: "underline"},
   ];
 
   style.push(props.additionalStyle != null ? props.additionalStyle : []);
 
-  return <Text style={style}>{props.text}</Text>;
+  return (
+    <Pressable 
+      onPress={props.onPress}
+      >
+      {({pressed}) => (
+          <Text style={[style, {fontWeight: pressed ? GOVUK_BOLD : GOVUK_WEIGHT}]}>
+            {props.text}
+          </Text>
+        )}
+    </Pressable>
+    );
 };
 
 export default LinkText;
