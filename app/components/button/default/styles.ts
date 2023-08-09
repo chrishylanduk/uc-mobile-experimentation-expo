@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    marginBottom: 22,
     maxWidth: "100%",
   },
   buttonCommon: {

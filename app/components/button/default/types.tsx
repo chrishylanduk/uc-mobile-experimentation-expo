@@ -1,7 +1,7 @@
 import { type StyleProp, type TextStyle } from "react-native";
 
 export type buttonPropType = {
-  text: string;
+  content: JSX.Element | JSX.Element[] | string;
   onPress: () => void;
   backgroundColour?: string;
   shadowColour?: string;
@@ -9,4 +9,5 @@ export type buttonPropType = {
   textColour?: string;
   left?: boolean;
   additionalStyle?: Array<StyleProp<TextStyle>>;
+  bottomMargin?: number;
 };

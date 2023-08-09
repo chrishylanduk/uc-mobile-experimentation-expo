@@ -10,7 +10,7 @@ const SettingsPage = (): ReactElement => {
       content={[
         <GovukH2 text="Settings" key={1} />,
         <BlockList
-          text={"Personal details"}
+          contents={"Personal details"}
           onPress={() => {
             navigate("SignIn", {
               screen: "Home",
@@ -20,7 +20,7 @@ const SettingsPage = (): ReactElement => {
           key={2}
         />,
         <BlockList
-          text={"Accessibility"}
+          contents={"Accessibility"}
           onPress={() => {
             navigate("SignIn", {
               screen: "Home",
@@ -30,7 +30,7 @@ const SettingsPage = (): ReactElement => {
           key={3}
         />,
         <BlockList
-          text={"Communication & notifications"}
+          contents={"Communication & notifications"}
           onPress={() => {
             navigate("SignIn", {
               screen: "Home",
@@ -40,7 +40,7 @@ const SettingsPage = (): ReactElement => {
           key={4}
         />,
         <BlockList
-          text={"Help & support"}
+          contents={"Help & support"}
           onPress={() => {
             navigate("SignIn", {
               screen: "Home",
@@ -50,7 +50,7 @@ const SettingsPage = (): ReactElement => {
           key={5}
         />,
         <BlockList
-          text={"App biometrics & PIN"}
+          contents={"App biometrics & PIN"}
           onPress={() => {
             navigate("SignIn", {
               screen: "Home",
@@ -60,7 +60,7 @@ const SettingsPage = (): ReactElement => {
           key={6}
         />,
         <BlockList
-          text={"Language"}
+          contents={"Language"}
           onPress={() => {
             navigate("SignIn", {
               screen: "Home",

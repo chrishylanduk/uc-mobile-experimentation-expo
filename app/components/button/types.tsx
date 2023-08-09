@@ -1,4 +1,4 @@
 export type nonDefaultPropType = {
-  text: string;
+  contents: JSX.Element | JSX.Element[] | string;
   onPress: () => void;
 };

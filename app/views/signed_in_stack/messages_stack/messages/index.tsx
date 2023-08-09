@@ -26,14 +26,14 @@ const MessagesPage = (): ReactElement => {
         <Warning text="Other warning" icon="ban" key={6} />,
         <GovukButton
           key={4}
-          text="test"
+          content="test"
           onPress={() => {
             navigate("SignIn", { screen: "Todo", params: { screen: "Home" } });
           }}
         />,
         <Inset content={<GovukText text={"inset text"} />} key={8} />,
         <BlockList
-          text={"block"}
+          contents={"block"}
           onPress={() => {
             navigate("SignIn", { screen: "Todo", params: { screen: "Home" } });
           }}
