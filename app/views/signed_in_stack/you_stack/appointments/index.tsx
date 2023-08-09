@@ -1,12 +1,15 @@
-import { Platform, Switch, View } from "react-native";
-import { useEffect, type ReactElement, useState } from "react";
-import React from "react";
-import * as Calendar from "expo-calendar";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useEffect, useState, type ReactElement } from "react";
 import Page from "../../../../components/page";
+import GovukH2 from "../../../../components/text/heading/h2";
+import GovukButton from "../../../../components/button/default";
+import { navigate } from "../../../../navigation/RootNavigation";
+import { Platform, View, Switch } from "react-native";
 import BlockList from "../../../../components/button/block_list";
-import GovukText from "../../../../components/text/text";
 import { itemStyle } from "../../../../components/home_block/styles";
+import GovukText from "../../../../components/text/text";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Calendar from "expo-calendar";
+import LinkText from "../../../../components/text/link";
 
 export const KEY_CALENDAR_TOGGLE = "KEY_CALENDAR_TOGGLE";
 export const KEY_CALENDAR_ID = "KEY_CALENDAR_ID";
@@ -32,7 +35,7 @@ async function addToCalendar(
   return eventIdInCalendar;
 }
 
-const AppointmentPage = (): ReactElement => {
+const AppointmentsPage = (): ReactElement => {
   useEffect(() => {
     void (async () => {
       const { status } = await Calendar.requestCalendarPermissionsAsync();
@@ -142,10 +145,35 @@ const AppointmentPage = (): ReactElement => {
       console.log("Deleted calendar");
     }
   }
-
   return (
     <Page
       content={[
+        <LinkText
+          key={0}
+          text={"Back"}
+          onPress={() => {
+            navigate("SignIn", {
+              screen: "You",
+              params: {
+                screen: "You Page",
+              },
+            });
+          }}
+        ></LinkText>,
+        <GovukH2 text="Your appointments" key={1} />,
+        <GovukButton
+          content={"View latest appointment"}
+          onPress={() => {
+            navigate("SignIn", {
+              screen: "You",
+              params: {
+                screen: "Appointments",
+                params: { screen: "Your Latest Appointment" },
+              },
+            });
+          }}
+          key={2}
+        ></GovukButton>,
         <BlockList
           contents={[
             <View style={itemStyle.itemContainer} key={1}>
@@ -163,11 +191,11 @@ const AppointmentPage = (): ReactElement => {
             </View>,
           ]}
           onPress={() => {}}
-          key={1}
+          key={3}
         />,
       ]}
     />
   );
 };
 
-export default AppointmentPage;
+export default AppointmentsPage;

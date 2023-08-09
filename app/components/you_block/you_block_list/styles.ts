@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { GOVUK_FONT_SIZE_XS, GOVUK_WEIGHT } from "../constants/styles";
-import { govuk_colour } from "../constants/colours";
+import { GOVUK_FONT_SIZE_XS, GOVUK_WEIGHT } from "../../constants/styles";
+import { govuk_colour } from "../../constants/colours";
 
 export const background = StyleSheet.create({
   background: {
@@ -19,10 +19,10 @@ export const itemStyle = StyleSheet.create({
     flexBasis: "auto",
   },
   icon: {
-    minHeight: 25,
+    minHeight: 35,
     flexGrow: 0,
     flexShrink: 0,
-    flexBasis: 25,
+    flexBasis: 35,
     color: govuk_colour.dark_grey,
   },
   chevron: {

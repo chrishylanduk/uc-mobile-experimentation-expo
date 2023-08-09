@@ -4,7 +4,6 @@ import { GOVUK_BORDER_COLOUR } from "../../constants/colours";
 
 export const govukHeadRowStyle = StyleSheet.create({
   head: {
-    height: 40,
     borderBottomWidth: 1,
     borderBottomColor: GOVUK_BORDER_COLOUR,
   },

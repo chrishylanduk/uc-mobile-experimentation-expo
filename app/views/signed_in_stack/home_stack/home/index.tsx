@@ -9,62 +9,90 @@ const ClaimantHomePage = (): ReactElement | null => {
   return (
     <Page
       content={[
-        <GovukH2 text="Welcome John" key={1} />,
-        <HomeBlockList 
+        <GovukH2 text="Welcome, John" key={1} />,
+        <HomeBlockList
           title="Important information"
           content={[
-            { text: "You will be paid £345 on Wednesday",
+            {
+              text: "You will be paid £345 on Wednesday 16 August",
               icon: "coins",
               onPress: () => {
-                navigate("SignIn", { screen: "You", params: { screen: "You Page" } });
-              }
+                navigate("SignIn", {
+                  screen: "You",
+                  params: { screen: "You Page" },
+                });
+              },
             },
-            { text: "Your next appointment is on Thursday 8th of July",
+            {
+              text: "Your next appointment is on Friday 11 August at 10am",
               icon: "calendar",
               onPress: () => {
-                navigate("SignIn", { screen: "To-dos", params: { screen: "Appointments" } });
-              }
-            }
+                navigate("SignIn", {
+                  screen: "You",
+                  params: {
+                    screen: "Appointments",
+                    params: { screen: "Your Latest Appointment" },
+                  },
+                });
+              },
+            },
           ]}
           key={2}
         />,
-        <HomeBlockList 
+        <HomeBlockList
           title="Coming up"
           content={[
-            { text: "Complete 'Accept your commitments' to-do by today",
+            {
+              text: "Complete 'Accept your commitments' to-do by today",
               icon: "list",
               onPress: () => {
-                navigate("SignIn", { screen: "To-dos", params: { screen: "Todo Page" } });
-              }
+                navigate("SignIn", {
+                  screen: "To-dos",
+                  params: { screen: "Todo Page" },
+                });
+              },
             },
-            { text: "Work search review on Thursday 8th of July",
+            {
+              text: "Work search review on Friday 11 August at 10am",
               icon: "calendar",
               onPress: () => {
-                navigate("SignIn", { screen: "To-dos", params: { screen: "Appointments" } });
-              }
+                navigate("SignIn", {
+                  screen: "You",
+                  params: {
+                    screen: "Appointments",
+                    params: { screen: "Your Latest Appointment" },
+                  },
+                });
+              },
             },
-            { text: "Report income and expenses by Friday 14th of July",
+            {
+              text: "Report income and expenses by Thursday 17 August",
               icon: "person",
               onPress: () => {
-                navigate("SignIn", { screen: "You", params: { screen: "You Page" } });
-              }
-            }
+                navigate("SignIn", {
+                  screen: "You",
+                  params: { screen: "You Page" },
+                });
+              },
+            },
           ]}
           key={3}
         />,
-        <HomeBlock 
+        <HomeBlock
           title="About you"
           content={[
-            {text: "You live with 5 people", icon: "house-chimney-user"},
-            {text: "You have 3 children", icon: "children"},
-            {text: "Health conditions reported", icon: "notes-medical"},
-          ]
-          }
+            { text: "You live with 5 people", icon: "house-chimney-user" },
+            { text: "You have 3 children", icon: "children" },
+            { text: "Health conditions reported", icon: "notes-medical" },
+          ]}
           linkText="See all or update"
           onPress={() => {
-            navigate("SignIn", { screen: "You", params: { screen: "You Page" } });
+            navigate("SignIn", {
+              screen: "You",
+              params: { screen: "You Page" },
+            });
           }}
-          key = {4}
+          key={4}
         />,
       ]}
     />

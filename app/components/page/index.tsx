@@ -10,7 +10,16 @@ const Page: FC<pagePropType> = (props) => {
       <View
         style={{ flex: 1, alignItems: "center", justifyContent: "flex-start" }}
       >
-        <View style={{ width: Dimensions.get('window').width < 400 ? "95%" : "80%", maxWidth: 500, minWidth: 300 }}>{props.content}</View>
+        <View
+          style={{
+            width: Dimensions.get("window").width < 400 ? "95%" : "90%",
+            maxWidth: 500,
+            minWidth: 300,
+            paddingTop: 10,
+          }}
+        >
+          {props.content}
+        </View>
       </View>
     </ScrollView>
   );
