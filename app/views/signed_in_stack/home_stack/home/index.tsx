@@ -24,7 +24,7 @@ const ClaimantHomePage = (): ReactElement | null => {
               },
             },
             {
-              text: "Your next appointment is on Friday 11 August at 10am",
+              text: "Your next appointment is on Friday 22 September at 10am",
               icon: "calendar",
               onPress: () => {
                 navigate("SignIn", {
@@ -53,7 +53,7 @@ const ClaimantHomePage = (): ReactElement | null => {
               },
             },
             {
-              text: "Work search review on Friday 11 August at 10am",
+              text: "Work search review on Friday 22 September at 10am",
               icon: "calendar",
               onPress: () => {
                 navigate("SignIn", {
@@ -93,6 +93,22 @@ const ClaimantHomePage = (): ReactElement | null => {
             });
           }}
           key={4}
+        />,
+        <HomeBlockList
+          title="Latest jobs from Find a Job"
+          content={[
+            {
+              text: "Retail Assistant at Sainsburys, Clifton BS1 3HF, £15 per hour",
+              icon: "carrot",
+              onPress: () => {},
+            },
+            {
+              text: "Care Assistant at Care solutions, Pill BS21 5UW, £15 per hour",
+              icon: "hand-holding-hand",
+              onPress: () => {},
+            },
+          ]}
+          key={5}
         />,
       ]}
     />

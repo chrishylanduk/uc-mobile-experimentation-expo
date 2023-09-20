@@ -30,6 +30,8 @@ export type MessagesStackType = {
 
 export type SettingsStackType = {
   "Settings Page": undefined;
+  "Home Settings Page": undefined;
+  "Biometrics Settings Page": undefined;
 };
 
 export type OffersStackType = {

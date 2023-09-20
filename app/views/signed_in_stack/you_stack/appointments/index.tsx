@@ -7,17 +7,21 @@ import { Platform, View, Switch } from "react-native";
 import BlockList from "../../../../components/button/block_list";
 import { itemStyle } from "../../../../components/home_block/styles";
 import GovukText from "../../../../components/text/text";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Calendar from "expo-calendar";
 import LinkText from "../../../../components/text/link";
+import {
+  readData,
+  storeData,
+  removeData,
+} from "../../../../utilities/data_storage/data_storage";
 
 export const KEY_CALENDAR_TOGGLE = "KEY_CALENDAR_TOGGLE";
 export const KEY_CALENDAR_ID = "KEY_CALENDAR_ID";
 
 const eventDetails = {
   title: "Work Search Review at Pudsey Jobcentre",
-  startDate: new Date("2023-08-11 10:00"),
-  endDate: new Date("2023-08-11 10:10"),
+  startDate: new Date("2023-09-22 10:00"),
+  endDate: new Date("2023-09-22 10:10"),
   location: "Century House, Church Ln, Pudsey LS28 7RQ",
   notes: "With work coach George Smith",
 };
@@ -54,34 +58,6 @@ const AppointmentsPage = (): ReactElement => {
       }
     })();
   }, []);
-
-  const storeData = async (key: string, value: string): Promise<void> => {
-    try {
-      await AsyncStorage.setItem(key, value);
-      console.log("Saved", key, value);
-    } catch (e) {
-      console.log("Error saving data");
-    }
-  };
-
-  const readData = async (key: string): Promise<string | null> => {
-    try {
-      const value = await AsyncStorage.getItem(key);
-      return value;
-    } catch (e) {
-      console.log("Error reading data");
-      return null;
-    }
-  };
-
-  const removeData = async (key: string): Promise<void> => {
-    try {
-      await AsyncStorage.removeItem(key);
-      console.log("Removed", key);
-    } catch (e) {
-      console.log("Error removing data");
-    }
-  };
 
   const toggleCalendarSwitchValue = async (value: boolean): Promise<void> => {
     setCalendarSwitchValue(value);
@@ -175,6 +151,7 @@ const AppointmentsPage = (): ReactElement => {
           key={2}
         ></GovukButton>,
         <BlockList
+          disabled={true}
           contents={[
             <View style={itemStyle.itemContainer} key={1}>
               <GovukText

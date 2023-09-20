@@ -10,4 +10,5 @@ export type buttonPropType = {
   left?: boolean;
   additionalStyle?: Array<StyleProp<TextStyle>>;
   bottomMargin?: number;
+  disabled?: boolean;
 };

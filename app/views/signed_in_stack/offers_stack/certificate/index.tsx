@@ -22,9 +22,9 @@ const CertificatePage = (): ReactElement => {
           style={{ width: 350, height: 350 }}
           source={require("../../../../../assets/images/QRExample.png")}
         />,
-        <GovukH3 text="Proof code: YTT-233-ASI-932" key={3} />,
+        <GovukH3 text="Proof code: YTT-233-ASI-932" key={5} />,
         <GovukText
-          key={5}
+          key={6}
           text={"This certificate expires: 29 October 2023"}
         ></GovukText>,
       ]}
