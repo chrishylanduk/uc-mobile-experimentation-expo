@@ -13,6 +13,7 @@ const BlockList: FC<nonDefaultPropType> = (props) => {
       textColour={GOVUK_LINK_COLOUR}
       left={true}
       bottomMargin={10}
+      disabled={props.disabled}
     />
   );
 };

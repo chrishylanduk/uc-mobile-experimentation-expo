@@ -10,16 +10,6 @@ const SettingsPage = (): ReactElement => {
       content={[
         <GovukH2 text="Settings" key={1} />,
         <BlockList
-          contents={"Personal details"}
-          onPress={() => {
-            navigate("SignIn", {
-              screen: "Home",
-              params: { screen: "Settings" },
-            });
-          }}
-          key={2}
-        />,
-        <BlockList
           contents={"Accessibility"}
           onPress={() => {
             navigate("SignIn", {
@@ -50,14 +40,24 @@ const SettingsPage = (): ReactElement => {
           key={5}
         />,
         <BlockList
-          contents={"App biometrics & PIN"}
+          contents={"App biometrics"}
           onPress={() => {
             navigate("SignIn", {
-              screen: "Home",
-              params: { screen: "Settings" },
+              screen: "Settings",
+              params: { screen: "Biometrics Settings Page" },
             });
           }}
           key={6}
+        />,
+        <BlockList
+          contents={"Customise home page"}
+          onPress={() => {
+            navigate("SignIn", {
+              screen: "Settings",
+              params: { screen: "Home Settings Page" },
+            });
+          }}
+          key={7}
         />,
         <BlockList
           contents={"Language"}
@@ -67,7 +67,7 @@ const SettingsPage = (): ReactElement => {
               params: { screen: "Settings" },
             });
           }}
-          key={7}
+          key={8}
         />,
       ]}
     />

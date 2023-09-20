@@ -25,7 +25,7 @@ const AnAppointmentPage = (): ReactElement => {
           }}
         ></LinkText>,
         <GovukText text={"You must attend on"} key={1} />,
-        <GovukH3 text="Friday 11 August 2023 at 10am" key={2} />,
+        <GovukH3 text="Friday 22 September 2023 at 10am" key={2} />,
         <GovukText
           text={"Your appointment is with:"}
           key={3}

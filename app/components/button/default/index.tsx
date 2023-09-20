@@ -28,11 +28,14 @@ const GovukButton: FC<buttonPropType> = (props) => {
         bottomEnd: false,
       }}
       containerStyle={styles.buttonContainer}
-      style={{marginBottom: props.bottomMargin != null ? props.bottomMargin : 22,}}
+      style={{
+        marginBottom: props.bottomMargin != null ? props.bottomMargin : 22,
+      }}
       stretch={true}
     >
       <Pressable
         onPress={props.onPress}
+        disabled={props.disabled}
         style={({ pressed }) =>
           additionalStyles.concat([
             styles.buttonCommon,
@@ -52,18 +55,17 @@ const GovukButton: FC<buttonPropType> = (props) => {
         }
         key={0}
       >
-        {typeof props.content === 'string'
-          ? 
+        {typeof props.content === "string" ? (
           <GovukText
             text={props.content}
             colour={
               props.textColour != null ? props.textColour : govuk_colour.white
             }
             key={2}
-          /> 
-          :
+          />
+        ) : (
           props.content
-        }
+        )}
       </Pressable>
     </Shadow>
   );
