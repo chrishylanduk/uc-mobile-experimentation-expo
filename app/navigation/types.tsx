@@ -34,6 +34,7 @@ export type SettingsStackType = {
 
 export type OffersStackType = {
   "Offers Page": undefined;
+  "Certificate Page": undefined;
 };
 
 export type YouStackType = {
