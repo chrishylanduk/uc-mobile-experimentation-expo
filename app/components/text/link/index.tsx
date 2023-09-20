@@ -1,12 +1,12 @@
 import React, { type FC } from "react";
 import { type StyleProp, Text, type TextStyle } from "react-native";
-import { type textPropType } from "./types";
+import { type linkPropType } from "./types";
 import { commonText } from "../styles";
 import { GOVUK_LINK_COLOUR } from "../../constants/colours";
 import { Pressable } from "react-native";
 import { GOVUK_BOLD, GOVUK_WEIGHT } from "../../constants/styles";
 
-const LinkText: FC<textPropType> = (props) => {
+const LinkText: FC<linkPropType> = (props) => {
   const style: StyleProp<TextStyle> = [
     commonText.text,
     commonText.commonText,

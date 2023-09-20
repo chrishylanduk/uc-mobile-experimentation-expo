@@ -8,7 +8,15 @@ const authenticate = async (
     const results = await LocalAuthentication.authenticateAsync();
 
     if (results.success) {
-      setUserId("user id");
+      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account/byId/123', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+      const accountId = await response.json();
+      setUserId(accountId);
     } else if (results.error === "unknown") {
       //
     } else if (

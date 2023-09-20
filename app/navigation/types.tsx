@@ -17,8 +17,13 @@ export type SignedInStackType = {
 
 export type SignedOutStackType = {
   Splash: undefined;
-  LoginButtonPage: undefined;
+  LogIn: NavigatorScreenParams<LoginStackType>;
 };
+
+export type LoginStackType = {
+  LoginButtonPage: undefined;
+  CreateAccount: undefined;
+}
 
 export type HomeStackType = {
   "Home Page": undefined;
@@ -26,6 +31,7 @@ export type HomeStackType = {
 
 export type MessagesStackType = {
   "Messages Page": undefined;
+  "Add Journal": undefined;
 };
 
 export type SettingsStackType = {
