@@ -46,7 +46,7 @@ const MessagesPage = (): ReactElement => {
           content="Add a journal entry" 
           onPress={() => {
             navigate("SignIn", {
-              screen: "Messages",
+              screen: "Journal",
               params: { screen: "Add Journal" },
             });
           }} key={4}

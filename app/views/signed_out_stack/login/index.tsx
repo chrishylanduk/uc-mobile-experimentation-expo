@@ -9,6 +9,7 @@ import GovukText from "../../../components/text/text";
 import GovukH1 from "../../../components/text/heading/h1";
 import { GOVUK_ERROR_COLOUR, govuk_colour } from "../../../components/constants/colours";
 import { navigate } from "../../../navigation/RootNavigation";
+import { readData } from "../../../utilities/data_storage/data_storage";
 
 const LoginPage = (): ReactElement => {
   const { setUserId } = useContext(UserIdContext);
@@ -17,7 +18,12 @@ const LoginPage = (): ReactElement => {
   const [error, setError] = useState('');
 
   React.useEffect(() => {
-    void authenticate(setUserId).catch();
+    void (async () => {
+      const result = await readData("biometricLogin");
+      if (result === "true") {
+        void authenticate(setUserId).catch();
+      }
+    })();
   }, []);
 
   return (

@@ -29,7 +29,7 @@ const AddJournal = (): ReactElement => {
       console.error(error)
     } finally {
       navigate("SignIn", {
-        screen: "Messages",
+        screen: "Journal",
         params: { screen: "Messages Page" },
       })
     }
