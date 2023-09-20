@@ -4,8 +4,22 @@ import GovukH2 from "../../../../components/text/heading/h2";
 import HomeBlockList from "../../../../components/home_block/home_block_list";
 import { navigate } from "../../../../navigation/RootNavigation";
 import HomeBlock from "../../../../components/home_block/home_block";
+import { View } from "react-native";
+import { readData } from "../../../../utilities/data_storage/data_storage";
 
 const ClaimantHomePage = (): ReactElement | null => {
+  const [findAJob, hasFindAJob] = React.useState<boolean>(true);
+
+
+  React.useEffect(() => {
+    setInterval(() => {
+      void (async () => {
+        const result = await readData("homeViewFindAJob");
+        hasFindAJob(result === "true")
+      })();
+    }, 500);
+  }, []);
+
   return (
     <Page
       content={[
@@ -94,7 +108,9 @@ const ClaimantHomePage = (): ReactElement | null => {
           }}
           key={4}
         />,
-        <HomeBlockList
+        <View key = {5}>
+          {findAJob ? 
+          <HomeBlockList
           title="Latest jobs from Find a Job"
           content={[
             {
@@ -108,8 +124,9 @@ const ClaimantHomePage = (): ReactElement | null => {
               onPress: () => {},
             },
           ]}
-          key={5}
-        />,
+          key={0}
+        /> : null}
+        </View>,
       ]}
     />
   );

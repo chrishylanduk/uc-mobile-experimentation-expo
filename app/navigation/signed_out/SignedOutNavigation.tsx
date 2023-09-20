@@ -7,6 +7,7 @@ import { LoginStackType, type SignedOutStackType } from "../types";
 import { type ReactElement } from "react";
 import CreateAccount from "../../views/signed_out_stack/create_account";
 import LogoTitle from "../../components/logo_title";
+import { readData } from "../../utilities/data_storage/data_storage";
 
 function LogInSection(): ReactElement {
   const SignedOut = createNativeStackNavigator<LoginStackType>();
@@ -61,7 +62,14 @@ function SignedOutSection(): ReactElement {
   };
 
   React.useEffect(() => {
-    setCheckedBio(checkSupportedAuthentication());
+    void (async () => {
+      const result = await readData("biometricLogin");
+      if (result === "true") {
+        setCheckedBio(checkSupportedAuthentication());
+      } else {
+        setCheckedBio(Promise.resolve(true))
+      }
+    })();
   }, []);
 
   return (
@@ -74,8 +82,10 @@ function SignedOutSection(): ReactElement {
       fingerprintAvailable ||
       irisAvailable ||
       checkedBio == null ? (
+        console.log("here2"),
         <SignedOutStack.Screen name="Splash" component={SplashPage} />
       ) : (
+        console.log("here"),
         <SignedOutStack.Screen name="LogIn" component={LogInSection} />
       )}
     </SignedOutStack.Navigator>

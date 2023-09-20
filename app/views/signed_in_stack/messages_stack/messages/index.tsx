@@ -27,7 +27,7 @@ const MessagesPage = (): ReactElement => {
   }
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    setInterval(() => {
       getJournals();
     }, 1000);
   }, []);
