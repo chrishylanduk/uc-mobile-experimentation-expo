@@ -1,7 +1,7 @@
 import { useState, type FC } from "react";
 import React from "react";
-import { TextInput, View } from "react-native";
-import { TextInputProps } from "react-native";
+import { TextInput, View , type TextInputProps } from "react-native";
+
 import styles from "./styles";
 import { GOVUK_FOCUS_COLOUR, GOVUK_INPUT_BORDER_COLOUR } from "../constants/colours";
 import { commonText } from "../text/styles";
@@ -27,8 +27,8 @@ const GovukInput: FC<TextInputProps> = (props) => {
         secureTextEntry={props.secureTextEntry}
         multiline={props.multiline}
         
-        onFocus={() => setFocussed(true)}
-        onBlur={() => setFocussed(false)}
+        onFocus={() => { setFocussed(true); }}
+        onBlur={() => { setFocussed(false); }}
       />
     </View>
   )

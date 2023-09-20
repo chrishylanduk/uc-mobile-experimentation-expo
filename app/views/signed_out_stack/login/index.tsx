@@ -1,4 +1,4 @@
-import { type ReactElement, useContext, SetStateAction } from "react";
+import { type ReactElement, useContext, type SetStateAction } from "react";
 import { UserIdContext } from "../../Context";
 import React, {useState} from "react";
 import authenticate from "../../../utilities/login/authenticate";

@@ -1,4 +1,4 @@
-import React, { useState, type ReactElement, useEffect, SetStateAction, useContext } from "react";
+import React, { useState, type ReactElement, type SetStateAction, useContext } from "react";
 import Page from "../../../../components/page";
 import GovukButton from "../../../../components/button/default";
 import GovukText from "../../../../components/text/text";
@@ -6,12 +6,6 @@ import { navigate } from "../../../../navigation/RootNavigation";
 import GovukH2 from "../../../../components/text/heading/h2";
 import GovukInput from "../../../../components/input";
 import { UserIdContext } from "../../../Context";
-
-type Journal = {
-  entry: string;
-  date: Date;
-  person: string;
-}
 
 const AddJournal = (): ReactElement => {
   const [entry, setEntry] = useState('');
@@ -55,8 +49,8 @@ const AddJournal = (): ReactElement => {
         />,
         <GovukButton 
           content="Add a journal entry" 
-          onPress={() => {
-            postJournal();
+          onPress={async () => {
+            await postJournal();
           }} key={4}
         />,
       ]}

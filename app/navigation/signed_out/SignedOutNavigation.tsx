@@ -3,7 +3,7 @@ import * as LocalAuthentication from "expo-local-authentication";
 import SplashPage from "../../views/signed_out_stack/splash";
 import LoginPage from "../../views/signed_out_stack/login";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { LoginStackType, type SignedOutStackType } from "../types";
+import { type LoginStackType, type SignedOutStackType } from "../types";
 import { type ReactElement } from "react";
 import CreateAccount from "../../views/signed_out_stack/create_account";
 import LogoTitle from "../../components/logo_title";
@@ -82,10 +82,8 @@ function SignedOutSection(): ReactElement {
       fingerprintAvailable ||
       irisAvailable ||
       checkedBio == null ? (
-        console.log("here2"),
         <SignedOutStack.Screen name="Splash" component={SplashPage} />
       ) : (
-        console.log("here"),
         <SignedOutStack.Screen name="LogIn" component={LogInSection} />
       )}
     </SignedOutStack.Navigator>

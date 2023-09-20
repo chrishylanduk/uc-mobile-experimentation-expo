@@ -1,4 +1,4 @@
-import { type ReactElement, useContext, SetStateAction } from "react";
+import { type ReactElement, type SetStateAction } from "react";
 import React, {useState} from "react";
 import GovukButton from "../../../components/button/default";
 import GovukInput from "../../../components/input";
@@ -7,6 +7,7 @@ import GovukText from "../../../components/text/text";
 import GovukH1 from "../../../components/text/heading/h1";
 import { GOVUK_ERROR_COLOUR } from "../../../components/constants/colours";
 import { navigate } from "../../../navigation/RootNavigation";
+import { getUniqueId } from 'react-native-device-info';
 
 const CreateAccount = (): ReactElement => {
   const [email, setEmail] = useState('');
@@ -48,7 +49,7 @@ const CreateAccount = (): ReactElement => {
           content="Create account"
           onPress={async () => {
               try {
-                if (password == reenterPassword) {
+                if (password === reenterPassword) {
                   const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account', {
                     method: 'POST',
                     headers: {
@@ -58,10 +59,11 @@ const CreateAccount = (): ReactElement => {
                     body: JSON.stringify({
                       email: email,
                       password: password,
+                      deviceId: getUniqueId(),
                     }),
                   });
                   if (!response.ok){
-                    if (response.status == 500) {
+                    if (response.status === 500) {
                       setError('Email has already been used')
                     } else {
                       setError("An unknown error has occurred, please try again later")

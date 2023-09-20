@@ -1,5 +1,6 @@
 import * as LocalAuthentication from "expo-local-authentication";
 import { type Dispatch, type SetStateAction } from "react";
+import { getUniqueId } from "react-native-device-info";
 
 const authenticate = async (
   setUserId: Dispatch<SetStateAction<string>>
@@ -8,7 +9,7 @@ const authenticate = async (
     const results = await LocalAuthentication.authenticateAsync();
 
     if (results.success) {
-      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account/byId/123', {
+      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account/byId/' + await getUniqueId(), {
         method: 'GET',
         headers: {
           Accept: 'application/json',

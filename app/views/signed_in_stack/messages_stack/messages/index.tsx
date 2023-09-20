@@ -27,8 +27,8 @@ const MessagesPage = (): ReactElement => {
   }
 
   useEffect(() => {
-    setInterval(() => {
-      getJournals();
+    setInterval(async () => {
+      await getJournals();
     }, 1000);
   }, []);
 
@@ -52,7 +52,7 @@ const MessagesPage = (): ReactElement => {
           }} key={4}
         />,
         <GovukH3 text="Journal entries" key={5}/>,
-        journals.length == 0 ?
+        journals.length === 0 ?
           <GovukText text="No journal entries" key={6}/>
         :
           <GovukTable key={6}>

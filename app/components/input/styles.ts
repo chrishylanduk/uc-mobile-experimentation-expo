@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { GOVUK_BORDER_COLOUR } from "../constants/colours";
 
 const styles = StyleSheet.create({
   border: {
