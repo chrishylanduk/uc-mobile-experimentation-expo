@@ -9,7 +9,7 @@ export type RootNavigationType = {
 export type SignedInStackType = {
   Home: NavigatorScreenParams<HomeStackType>;
   "To-dos": NavigatorScreenParams<TodoStackType>;
-  Messages: NavigatorScreenParams<MessagesStackType>;
+  Journal: NavigatorScreenParams<MessagesStackType>;
   Settings: NavigatorScreenParams<SettingsStackType>;
   Offers: NavigatorScreenParams<OffersStackType>;
   You: NavigatorScreenParams<YouStackType>;
@@ -38,10 +38,14 @@ export type OffersStackType = {
 
 export type YouStackType = {
   "You Page": undefined;
-  Settings: undefined;
+  Appointments: undefined;
 };
 
 export type TodoStackType = {
   "Todo Page": undefined;
+};
+
+export type AppointmentsStackType = {
   Appointments: undefined;
+  "Your Latest Appointment": undefined;
 };

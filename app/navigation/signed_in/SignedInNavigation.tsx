@@ -34,7 +34,7 @@ function SignedInSection(): ReactElement {
               icon = "clipboard";
               break;
             }
-            case "Messages": {
+            case "Journal": {
               icon = "comment";
               break;
             }
@@ -83,7 +83,7 @@ function SignedInSection(): ReactElement {
       })}
     >
       <SignedInStack.Screen name="Home" component={HomeSection} />
-      <SignedInStack.Screen name="Messages" component={MessagesSection} />
+      <SignedInStack.Screen name="Journal" component={MessagesSection} />
       <SignedInStack.Screen name="To-dos" component={TodoSection} />
       <SignedInStack.Screen name="Offers" component={OffersSection} />
       <SignedInStack.Screen name="You" component={YouSection} />

@@ -32,7 +32,7 @@ function App(): ReactElement {
     OneSignal.setAppId(Constants.manifest?.extra?.oneSignalAppId);
     OneSignal.promptForPushNotificationsWithUserResponse();
     OneSignal.setNotificationOpenedHandler((notification) => {
-      setPage({ page: "To-dos", subpage: "Appointments", override: true });
+      // setPage({ page: "To-dos", subpage: "Appointments", override: true });
     });
   }, []);
 

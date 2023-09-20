@@ -38,6 +38,12 @@
           "mode": "development",
           "smallIcons": ["./assets/images/ic_stat_onesignal_default.png"]
         }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "If you give access to your calendar, appointment reminders can be added."
+        }
       ]
     ]
   }

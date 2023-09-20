@@ -4,4 +4,5 @@ export type textPropType = {
   text: string;
   colour?: string;
   additionalStyle?: Array<StyleProp<TextStyle>>;
+  onPress?: () => void;
 };
