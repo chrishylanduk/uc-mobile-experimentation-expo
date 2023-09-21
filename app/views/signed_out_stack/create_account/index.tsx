@@ -50,30 +50,30 @@ const CreateAccount = (): ReactElement => {
           onPress={async () => {
               try {
                 if (password === reenterPassword) {
-                  const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account', {
-                    method: 'POST',
-                    headers: {
-                      Accept: 'application/json',
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                      email: email,
-                      password: password,
-                      deviceId: (await getUniqueId()).toString,
-                    }),
-                  });
-                  if (!response.ok){
-                    if (response.status === 500) {
-                      setError('Email has already been used')
-                    } else {
-                      setError("An unknown error has occurred, please try again later")
-                    }
-                  } else {
+                  // const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account', {
+                  //   method: 'POST',
+                  //   headers: {
+                  //     Accept: 'application/json',
+                  //     'Content-Type': 'application/json'
+                  //   },
+                  //   body: JSON.stringify({
+                  //     email: email,
+                  //     password: password,
+                  //     deviceId: (await getUniqueId()).toString,
+                  //   }),
+                  // });
+                  // if (!response.ok){
+                  //   if (response.status === 500) {
+                  //     setError('Email has already been used')
+                  //   } else {
+                  //     setError("An unknown error has occurred, please try again later")
+                  //   }
+                  // } else {
                     navigate("SignedOut", {
                       screen: "LogIn",
                       params: { screen: "LoginButtonPage" },
                     });
-                  }
+                  // }
                 } else {
                   setError("Passwords must match")
                 }

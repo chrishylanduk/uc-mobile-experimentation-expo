@@ -9,7 +9,7 @@ const authenticate = async (
     const results = await LocalAuthentication.authenticateAsync();
 
     if (results.success) {
-      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account/byId/' + await getUniqueId(), {
+      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account/byId/1234', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
