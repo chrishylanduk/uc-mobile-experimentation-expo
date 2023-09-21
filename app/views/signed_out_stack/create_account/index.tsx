@@ -59,7 +59,7 @@ const CreateAccount = (): ReactElement => {
                     body: JSON.stringify({
                       email: email,
                       password: password,
-                      deviceId: getUniqueId(),
+                      deviceId: (await getUniqueId()).toString,
                     }),
                   });
                   if (!response.ok){
