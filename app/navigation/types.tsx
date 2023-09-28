@@ -23,6 +23,7 @@ export type SignedOutStackType = {
 export type LoginStackType = {
   LoginButtonPage: undefined;
   CreateAccount: undefined;
+  AccountDetails: undefined;
 }
 
 export type HomeStackType = {

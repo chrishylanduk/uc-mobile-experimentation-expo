@@ -7,7 +7,7 @@ import GovukInput from "../../../components/input";
 import Page from "../../../components/page";
 import GovukText from "../../../components/text/text";
 import GovukH1 from "../../../components/text/heading/h1";
-import { GOVUK_ERROR_COLOUR, govuk_colour } from "../../../components/constants/colours";
+import { GOVUK_ERROR_COLOUR, GOVUK_TEXT_COLOUR, govuk_colour } from "../../../components/constants/colours";
 import { navigate } from "../../../navigation/RootNavigation";
 import { readData } from "../../../utilities/data_storage/data_storage";
 
@@ -46,6 +46,7 @@ const LoginPage = (): ReactElement => {
             setPassword(text);
           }}
           secureTextEntry
+          textContentType="password"
           key={4}
         />,
         <GovukButton
@@ -70,7 +71,8 @@ const LoginPage = (): ReactElement => {
         <GovukButton
           content="Create Account"
           backgroundColour={govuk_colour.mid_grey}
-          onPress={ () => {
+          textColour={GOVUK_TEXT_COLOUR}
+          onPress={ async () => {
             navigate("SignedOut", {
               screen: "LogIn",
               params: { screen: "CreateAccount" },

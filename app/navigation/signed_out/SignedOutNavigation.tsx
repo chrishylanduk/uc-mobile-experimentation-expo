@@ -5,9 +5,10 @@ import LoginPage from "../../views/signed_out_stack/login";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { type LoginStackType, type SignedOutStackType } from "../types";
 import { type ReactElement } from "react";
-import CreateAccount from "../../views/signed_out_stack/create_account";
+import CreateAccount from "../../views/signed_out_stack/create/create_account";
 import LogoTitle from "../../components/logo_title";
 import { readData } from "../../utilities/data_storage/data_storage";
+import AccountDetails from "../../views/signed_out_stack/create/account_details";
 
 function LogInSection(): ReactElement {
   const SignedOut = createNativeStackNavigator<LoginStackType>();
@@ -31,6 +32,7 @@ function LogInSection(): ReactElement {
     >
       <SignedOut.Screen name="LoginButtonPage" component={LoginPage} />
       <SignedOut.Screen name="CreateAccount" component={CreateAccount} />
+      <SignedOut.Screen name="AccountDetails" component={AccountDetails} />
     </SignedOut.Navigator>
   );
 }

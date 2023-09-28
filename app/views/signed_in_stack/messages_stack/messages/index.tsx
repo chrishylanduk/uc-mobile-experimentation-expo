@@ -15,21 +15,23 @@ import { UserIdContext } from "../../../Context";
 const MessagesPage = (): ReactElement => {
   const {userId} = useContext(UserIdContext);
   const [journals, setJournals] = useState<Journal[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const getJournals = async () => {
     try {
       const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/journal/' + userId);
       const journals = await response.json();
-      setJournals(journals)
+      setJournals(journals);
+      setLoading(false);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
   useEffect(() => {
     setInterval(async () => {
       await getJournals();
-    }, 1000);
+    }, 500);
   }, []);
 
   return (
@@ -44,7 +46,7 @@ const MessagesPage = (): ReactElement => {
         ]} key={3}/>,
         <GovukButton 
           content="Add a journal entry" 
-          onPress={() => {
+          onPress={async () => {
             navigate("SignIn", {
               screen: "Journal",
               params: { screen: "Add Journal" },
@@ -53,7 +55,7 @@ const MessagesPage = (): ReactElement => {
         />,
         <GovukH3 text="Journal entries" key={5}/>,
         journals.length === 0 ?
-          <GovukText text="No journal entries" key={6}/>
+          <GovukText text={loading ? "Loading journal entries" : "No journal entries"} key={6}/>
         :
           <GovukTable key={6}>
             <GovukHeadRow data={["Date and time", "Message", "Added by"]} flexArr={[20, 60, 20]} key={1}/>

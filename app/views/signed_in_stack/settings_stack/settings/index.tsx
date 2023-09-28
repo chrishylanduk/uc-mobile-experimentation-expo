@@ -1,10 +1,13 @@
-import React, { type ReactElement } from "react";
+import React, { useContext, type ReactElement } from "react";
 import Page from "../../../../components/page";
 import GovukH2 from "../../../../components/text/heading/h2";
 import BlockList from "../../../../components/button/block_list";
 import { navigate } from "../../../../navigation/RootNavigation";
+import { UserIdContext } from "../../../Context";
 
 const SettingsPage = (): ReactElement => {
+  const { setUserId } = useContext(UserIdContext);
+
   return (
     <Page
       content={[
@@ -68,6 +71,13 @@ const SettingsPage = (): ReactElement => {
             });
           }}
           key={8}
+        />,
+        <BlockList
+          contents={"Sign out"}
+          onPress={async () => {
+            setUserId("");
+          }}
+          key={9}
         />,
       ]}
     />

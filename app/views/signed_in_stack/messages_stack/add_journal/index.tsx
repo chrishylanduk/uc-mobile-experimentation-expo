@@ -6,6 +6,7 @@ import { navigate } from "../../../../navigation/RootNavigation";
 import GovukH2 from "../../../../components/text/heading/h2";
 import GovukInput from "../../../../components/input";
 import { UserIdContext } from "../../../Context";
+import LinkText from "../../../../components/text/link";
 
 const AddJournal = (): ReactElement => {
   const [entry, setEntry] = useState('');
@@ -38,6 +39,16 @@ const AddJournal = (): ReactElement => {
   return (
     <Page
       content={[
+        <LinkText
+          key={-1}
+          text={"Back"}
+          onPress={() => {
+            navigate("SignIn", {
+              screen: "Journal",
+              params: { screen: "Messages Page" },
+            });
+          }}
+        />,
         <GovukH2 text="Add journal entry" key={1} />,
         <GovukText text="Write a journal message" key={2}/>,
         <GovukInput
