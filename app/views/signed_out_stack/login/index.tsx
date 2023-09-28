@@ -10,6 +10,7 @@ import GovukH1 from "../../../components/text/heading/h1";
 import { GOVUK_ERROR_COLOUR, GOVUK_TEXT_COLOUR, govuk_colour } from "../../../components/constants/colours";
 import { navigate } from "../../../navigation/RootNavigation";
 import { readData } from "../../../utilities/data_storage/data_storage";
+import GovukH3 from "../../../components/text/heading/h3";
 
 const LoginPage = (): ReactElement => {
   const { setUserId } = useContext(UserIdContext);
@@ -31,7 +32,7 @@ const LoginPage = (): ReactElement => {
       content={[
         <GovukH1 text={"Sign In"} key={0}/>,
         <GovukText text={error} colour={GOVUK_ERROR_COLOUR} key = {6}/>,
-        <GovukText text="Email" key={1}/>,
+        <GovukH3 text="Email" additionalStyle={[{paddingTop: 0, marginBottom: 0,}]} key={1}/>,
         <GovukInput
           onChangeText={(text: SetStateAction<string>) => {
             setEmail(text);
@@ -40,7 +41,7 @@ const LoginPage = (): ReactElement => {
           textContentType="emailAddress"
           key={2}
         />,
-        <GovukText text="Password" key={3}/>,
+        <GovukH3 text="Password" additionalStyle={[{paddingTop: 0, marginBottom: 0,}]} key={3}/>,
         <GovukInput
           onChangeText={(text: SetStateAction<string>) => {
             setPassword(text);

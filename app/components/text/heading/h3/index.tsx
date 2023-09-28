@@ -8,7 +8,7 @@ const GovukH3: FC<nonDefaultTextPropType> = (props) => {
   return (
     <GovukText
       text={props.text}
-      additionalStyle={[headerText.header, styles.h3]}
+      additionalStyle={[headerText.header, styles.h3, props.additionalStyle]}
     />
   );
 };
