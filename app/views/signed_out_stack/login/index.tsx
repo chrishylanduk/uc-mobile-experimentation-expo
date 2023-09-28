@@ -11,17 +11,20 @@ import { GOVUK_ERROR_COLOUR, GOVUK_TEXT_COLOUR, govuk_colour } from "../../../co
 import { navigate } from "../../../navigation/RootNavigation";
 import { readData } from "../../../utilities/data_storage/data_storage";
 import GovukH3 from "../../../components/text/heading/h3";
+import { View } from "react-native";
 
 const LoginPage = (): ReactElement => {
   const { setUserId } = useContext(UserIdContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [hasAuthn, setAuthn] = useState<boolean>(false)
 
   React.useEffect(() => {
     void (async () => {
       const result = await readData("biometricLogin");
       if (result === "true") {
+        setAuthn(true);
         void authenticate(setUserId).catch();
       }
     })();
@@ -69,6 +72,21 @@ const LoginPage = (): ReactElement => {
           }}
           key={5}
         />,
+        <View key={9}>
+          {hasAuthn ?
+          <GovukButton
+            content="Use biometrics"
+            backgroundColour={govuk_colour.mid_grey}
+            textColour={GOVUK_TEXT_COLOUR}
+            onPress={ async () => {
+              const result = await readData("biometricLogin");
+              if (result === "true") {
+                await authenticate(setUserId).catch();
+              }
+            }}
+            key={1}
+          /> : null}
+        </View>,
         <GovukButton
           content="Create Account"
           backgroundColour={govuk_colour.mid_grey}
@@ -78,9 +96,8 @@ const LoginPage = (): ReactElement => {
               screen: "LogIn",
               params: { screen: "CreateAccount" },
             });
-            }
-          }
-          key={9}
+          }}
+          key={10}
         />
       ]}
     />

@@ -80,10 +80,7 @@ function SignedOutSection(): ReactElement {
         headerShown: false,
       }}
     >
-      {facialRecognitionAvailable ||
-      fingerprintAvailable ||
-      irisAvailable ||
-      checkedBio == null ? (
+      {checkedBio == null ? (
         <SignedOutStack.Screen name="Splash" component={SplashPage} />
       ) : (
         <SignedOutStack.Screen name="LogIn" component={LogInSection} />

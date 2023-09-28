@@ -18,14 +18,6 @@ const authenticate = async (
       });
       const accountId = await response.json();
       setUserId(accountId);
-    } else if (results.error === "unknown") {
-      //
-    } else if (
-      results.error === "user_cancel" ||
-      results.error === "system_cancel" ||
-      results.error === "app_cancel"
-    ) {
-      //
     }
   } catch (error) {}
 };
