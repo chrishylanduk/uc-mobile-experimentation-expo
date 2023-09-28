@@ -65,6 +65,8 @@ const LoginPage = (): ReactElement => {
                 } else {
                   setError("Incorrect email or password")
                 }
+              } else {
+                setError("A network error has occurred, please try again later")
               }
             } catch (error) {
               setError("A network error has occurred, please try again later")

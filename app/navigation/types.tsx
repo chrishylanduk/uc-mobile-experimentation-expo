@@ -48,7 +48,8 @@ export type OffersStackType = {
 
 export type YouStackType = {
   "You Page": undefined;
-  Appointments: undefined;
+  Appointments: NavigatorScreenParams<AppointmentsStackType>;
+  "About You": NavigatorScreenParams<AboutYouStackType>;
 };
 
 export type TodoStackType = {
@@ -58,4 +59,9 @@ export type TodoStackType = {
 export type AppointmentsStackType = {
   Appointments: undefined;
   "Your Latest Appointment": undefined;
+};
+
+export type AboutYouStackType = {
+  "About You": undefined;
+  "Update Name": undefined;
 };
