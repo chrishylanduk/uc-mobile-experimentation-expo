@@ -9,7 +9,6 @@ const authenticate = async (
     const results = await LocalAuthentication.authenticateAsync();
 
     if (results.success) {
-      console.log(Constants.manifest?.extra?.oneSignalAppId)
       const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/accountNumber/byId/' + Constants.manifest?.extra?.oneSignalAppId, {
         method: 'GET',
         headers: {
@@ -18,7 +17,6 @@ const authenticate = async (
         }
       });
       const accountId = await response.json();
-      console.log(accountId);
       setUserId(accountId);
     } else if (results.error === "unknown") {
       //
