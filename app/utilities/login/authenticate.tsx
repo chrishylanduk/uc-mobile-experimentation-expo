@@ -1,6 +1,6 @@
 import * as LocalAuthentication from "expo-local-authentication";
 import { type Dispatch, type SetStateAction } from "react";
-import { getUniqueId } from "react-native-device-info";
+import Constants from "expo-constants";
 
 const authenticate = async (
   setUserId: Dispatch<SetStateAction<string>>
@@ -9,7 +9,8 @@ const authenticate = async (
     const results = await LocalAuthentication.authenticateAsync();
 
     if (results.success) {
-      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/account/byId/1234', {
+      console.log(Constants.manifest?.extra?.oneSignalAppId)
+      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/accountNumber/byId/' + Constants.manifest?.extra?.oneSignalAppId, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -17,6 +18,7 @@ const authenticate = async (
         }
       });
       const accountId = await response.json();
+      console.log(accountId);
       setUserId(accountId);
     } else if (results.error === "unknown") {
       //
