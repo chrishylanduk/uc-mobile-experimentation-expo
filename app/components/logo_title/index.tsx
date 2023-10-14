@@ -1,5 +1,5 @@
 import { Image } from "react-native";
-import * as React from "react";
+import React from "react";
 import { type ReactElement } from "react";
 
 function LogoTitle(): ReactElement {

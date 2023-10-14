@@ -17,8 +17,14 @@ export type SignedInStackType = {
 
 export type SignedOutStackType = {
   Splash: undefined;
-  LoginButtonPage: undefined;
+  LogIn: NavigatorScreenParams<LoginStackType>;
 };
+
+export type LoginStackType = {
+  LoginButtonPage: undefined;
+  CreateAccount: undefined;
+  AccountDetails: undefined;
+}
 
 export type HomeStackType = {
   "Home Page": undefined;
@@ -26,6 +32,7 @@ export type HomeStackType = {
 
 export type MessagesStackType = {
   "Messages Page": undefined;
+  "Add Journal": undefined;
 };
 
 export type SettingsStackType = {
@@ -41,7 +48,8 @@ export type OffersStackType = {
 
 export type YouStackType = {
   "You Page": undefined;
-  Appointments: undefined;
+  Appointments: NavigatorScreenParams<AppointmentsStackType>;
+  "About You": NavigatorScreenParams<AboutYouStackType>;
 };
 
 export type TodoStackType = {
@@ -51,4 +59,9 @@ export type TodoStackType = {
 export type AppointmentsStackType = {
   Appointments: undefined;
   "Your Latest Appointment": undefined;
+};
+
+export type AboutYouStackType = {
+  "About You": undefined;
+  "Update Name": undefined;
 };

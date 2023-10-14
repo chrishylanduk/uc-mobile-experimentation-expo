@@ -1,15 +1,47 @@
 import Page from "../../../../components/page";
-import React, { type ReactElement } from "react";
+import React, { useState, type ReactElement, useContext, useEffect } from "react";
 import GovukH2 from "../../../../components/text/heading/h2";
 import HomeBlockList from "../../../../components/home_block/home_block_list";
 import { navigate } from "../../../../navigation/RootNavigation";
 import HomeBlock from "../../../../components/home_block/home_block";
+import { View } from "react-native";
+import { readData } from "../../../../utilities/data_storage/data_storage";
+import { UserIdContext } from "../../../Context";
 
 const ClaimantHomePage = (): ReactElement | null => {
+  const [findAJob, hasFindAJob] = useState<boolean>(true);
+  const {userId} = useContext(UserIdContext);
+  const [givenName, setGivenName] = useState('');
+
+  const getGivenName = async () => {
+    try {
+      const response = await fetch('https://uc-mobile-exp-backend-production.up.railway.app/personal/' + userId);
+      const accountDetails = await response.json();
+      setGivenName(accountDetails.givenName)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    getGivenName();
+  }, []);
+
+  useEffect(() => {
+    setInterval(async () => {
+      const result = await readData("homeViewFindAJob");
+      hasFindAJob(result === "true");
+    }, 500);
+  }, []);
+
+  if (givenName == '') {
+    return(<Page content={<GovukH2 text={"Loading..."} key={1} />} />);
+  }
+
   return (
     <Page
       content={[
-        <GovukH2 text="Welcome, John" key={1} />,
+        <GovukH2 text={"Welcome, " + givenName} key={1} />,
         <HomeBlockList
           title="Important information"
           content={[
@@ -94,7 +126,9 @@ const ClaimantHomePage = (): ReactElement | null => {
           }}
           key={4}
         />,
-        <HomeBlockList
+        <View key = {5}>
+          {findAJob ? 
+          <HomeBlockList
           title="Latest jobs from Find a Job"
           content={[
             {
@@ -108,8 +142,9 @@ const ClaimantHomePage = (): ReactElement | null => {
               onPress: () => {},
             },
           ]}
-          key={5}
-        />,
+          key={0}
+        /> : null}
+        </View>,
       ]}
     />
   );

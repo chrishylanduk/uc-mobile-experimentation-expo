@@ -10,8 +10,10 @@ import {
   GOVUK_FOCUS_COLOUR,
   GOVUK_SUCCESS_COLOUR,
 } from "../../constants/colours";
+import { tr } from "date-fns/locale";
 
 const GovukButton: FC<buttonPropType> = (props) => {
+  const [disabled, setDisabled] = React.useState<boolean>(false);
   const additionalStyles =
     props.additionalStyle != null ? props.additionalStyle : [];
 
@@ -34,8 +36,12 @@ const GovukButton: FC<buttonPropType> = (props) => {
       stretch={true}
     >
       <Pressable
-        onPress={props.onPress}
-        disabled={props.disabled}
+        onPress={async () => {
+          setDisabled(true); 
+          await props.onPress();
+          setDisabled(false);
+        }}
+        disabled={disabled}
         style={({ pressed }) =>
           additionalStyles.concat([
             styles.buttonCommon,
@@ -45,7 +51,7 @@ const GovukButton: FC<buttonPropType> = (props) => {
                 props.backgroundColour != null
                   ? props.backgroundColour
                   : GOVUK_SUCCESS_COLOUR,
-              borderColor: pressed
+              borderColor: pressed || disabled
                 ? props.pressedColour != null
                   ? props.pressedColour
                   : GOVUK_FOCUS_COLOUR

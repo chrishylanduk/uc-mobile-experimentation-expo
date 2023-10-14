@@ -1,3 +1,3 @@
-export type blockListPropType = {
+export type ulPropType = {
   content: JSX.Element[];
 };

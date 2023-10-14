@@ -2,7 +2,7 @@ import { type StyleProp, type TextStyle } from "react-native";
 
 export type buttonPropType = {
   content: JSX.Element | JSX.Element[] | string;
-  onPress: () => void;
+  onPress: () => Promise<void>;
   backgroundColour?: string;
   shadowColour?: string;
   pressedColour?: string;
@@ -10,5 +10,4 @@ export type buttonPropType = {
   left?: boolean;
   additionalStyle?: Array<StyleProp<TextStyle>>;
   bottomMargin?: number;
-  disabled?: boolean;
 };

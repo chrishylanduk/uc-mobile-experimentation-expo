@@ -11,7 +11,15 @@ const YouPage = (): ReactElement => {
           content={[
             {
               text: "About you",
-              onPress: () => {},
+              onPress: () => {
+                navigate("SignIn", {
+                  screen: "You",
+                  params: {
+                    screen: "About You",
+                    params: { screen: "About You Page" },
+                  },
+                });
+              },
             },
             {
               text: "Your appointments",
